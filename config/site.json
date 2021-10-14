@@ -7,14 +7,14 @@
     "400",
     "600"
   ],
-  "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by SpencerWoo.",
+  "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by YU.",
   "protectedRoutes": [
-    "/🌞 Private folder/u-need-a-password",
-    "/🥟 Some test files/Protected route"
+    "/",
+    "/"
   ],
   "contact": {
-    "email": "mailto:spencer.wushangbo@gmail.com",
-    "telegram": "https://t.me/realSpencerWoo",
+    "email": "mailto:chengyujin86@gmail.com",
+    "telegram": "https://t.me/Yang_Oliver",
     "github": "https://github.com/spencerwooo/onedrive-vercel-index"
   }
 }
