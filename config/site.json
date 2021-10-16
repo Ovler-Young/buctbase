@@ -1,6 +1,6 @@
 {
   "icon": "/icons/128.png",
-  "title": "YU's OneDrive Index",
+  "title": "the moon and sixpence sharing",
   "maxItems": 150,
   "googleFont": "Rubik",
   "googleFontWeights": [
@@ -9,8 +9,7 @@
   ],
   "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by YU.",
   "protectedRoutes": [
-    "/",
-    "/"
+    "/xdfcghghfdxbcgnvhbjnk"
   ],
   "contact": {
     "email": "mailto:chengyujin86@gmail.com",
