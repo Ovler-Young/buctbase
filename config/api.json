@@ -3,5 +3,5 @@
   "redirectUri": "http://localhost:3000",
   "base": "/share",
   "authApi": "https://login.microsoftonline.com/common/oauth2/v2.0",
-  "driveApi": "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com:buctbase2"
+  "driveApi": "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com:/sites/buctbase2"
 }
