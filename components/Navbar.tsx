@@ -67,7 +67,15 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 p-2 rounded"
           >
-            <FontAwesomeIcon icon={['fab', 'telegram-plane']} size="lg" />
+            <FontAwesomeIcon icon={['fab', 'telegram']} size="lg" />
+          </a>
+          <a
+            href={siteConfig.contact.qq}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 p-2 rounded"
+          >
+            <FontAwesomeIcon icon={['fab', 'qq']} size="lg" />
           </a>
           <a
             href={siteConfig.contact.email}
