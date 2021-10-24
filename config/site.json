@@ -9,7 +9,8 @@
   ],
   "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by Oliver.",
   "protectedRoutes": [
-    "/password-protected"
+    "/password-protected",
+    "/MATLAB"
   ],
   "contact": {
     "email": "mailto:chengyujin86@gmail.com",
