@@ -12,6 +12,8 @@
     "/password-protected"
   ],
   "contact": {
+    "email": "mailto:chengyujin86@gmail.com",
+    "telegram": "https://t.me/Yang_Oliver",
     "github": "https://github.com/spencerwooo/onedrive-vercel-index"
   }
 }
