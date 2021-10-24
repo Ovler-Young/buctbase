@@ -51,6 +51,7 @@ const extensions = {
   flv: preview.video,
   webm: preview.video,
   m3u8: preview.video,
+  mov: preview.video,
   mkv: preview.video,
   avi: preview.video, // won't work!
 
