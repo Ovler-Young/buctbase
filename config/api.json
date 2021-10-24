@@ -2,6 +2,6 @@
   "clientId": "480a6b80-6dc6-409f-b39d-a894834a3069",
   "redirectUri": "http://localhost/od-cf",
   "base": "/share",
-  "authApi": "https://login.microsoftonline.com/common/oauth2/v2.0",
+  "authApi": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
   "driveApi": "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com:/sites/buctbase2"
 }
