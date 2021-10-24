@@ -37,7 +37,7 @@ import {
   faCloud,
   faChevronCircleDown,
 } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faMarkdown, faTelegramPlane, qq, faweixin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faMarkdown, faTelegramPlane, faQq, faWeixin } from '@fortawesome/free-brands-svg-icons'
 
 import type { AppProps } from 'next/app'
 
@@ -74,8 +74,8 @@ library.add(
   faEnvelope,
   faCloud,
   faTelegramPlane,
-  qq,
-  faweixin,
+  faQq,
+  faWeixin,
   faChevronCircleDown
 )
 
