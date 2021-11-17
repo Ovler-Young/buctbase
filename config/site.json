@@ -7,9 +7,9 @@
     "400",
     "600"
   ],
-  "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by ZAC & Oliver.",
+  "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by ZAC & BUCTBASE.",
   "protectedRoutes": [
-    "/密码保护文件"
+    "/内部资料"
   ],
   "contact": {
     "email": "mailto:zhadui@buctbase.com",
