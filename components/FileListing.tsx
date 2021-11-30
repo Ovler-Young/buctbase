@@ -68,10 +68,10 @@ const FileListItem: FunctionComponent<{
   const renderEmoji = emojiIcon && !emojiIcon.index
 
   return (
-    <div className={`grid items-center grid-cols-11 p-3 space-x-2 cursor-pointer ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
+    <div className={`grid items-center grid-cols-11 p-3 space-x-2 cursor-pointer`}>
       <div className="md:col-span-7 flex items-center col-span-11 space-x-2 truncate">
         {/* <div>{c.file ? c.file.mimeType : 'folder'}</div> */}
-        <div className={`flex-shrink-0 w-5 text-centerr ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
+        <div className={`flex-shrink-0 w-5 text-centerr`}>
           {renderEmoji ? (
             <span>{emojiIcon ? emojiIcon[0] : '📁'}</span>
           ) : (
