@@ -71,7 +71,7 @@ const FileListItem: FunctionComponent<{
     <div className={`grid items-center grid-cols-11 p-3 space-x-2 cursor-pointer`}>
       <div className="md:col-span-7 flex items-center col-span-11 space-x-2 truncate">
         {/* <div>{c.file ? c.file.mimeType : 'folder'}</div> */}
-        <div className={`flex-shrink-0 w-5 text-centerr`}>
+        <div className={`flex-shrink-0 w-5 text-center`}>
           {renderEmoji ? (
             <span>{emojiIcon ? emojiIcon[0] : '📁'}</span>
           ) : (
