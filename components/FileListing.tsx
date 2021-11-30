@@ -68,10 +68,10 @@ const FileListItem: FunctionComponent<{
   const renderEmoji = emojiIcon && !emojiIcon.index
 
   return (
-    <div className="grid items-center grid-cols-11 p-3 space-x-2 cursor-pointer">
+    <div className={`grid items-center grid-cols-11 p-3 space-x-2 cursor-pointer`}>
       <div className="md:col-span-7 flex items-center col-span-11 space-x-2 truncate">
         {/* <div>{c.file ? c.file.mimeType : 'folder'}</div> */}
-        <div className="flex-shrink-0 w-5 text-center">
+        <div className={`flex-shrink-0 w-5 text-center`}>
           {renderEmoji ? (
             <span>{emojiIcon ? emojiIcon[0] : '📁'}</span>
           ) : (
@@ -229,7 +229,7 @@ const FileListing: FunctionComponent<{ query?: ParsedUrlQuery }> = ({ query }) =
         )}
 
         {children.map((c: any) => (
-          <div className={`hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12 ${c.name == '.password' ? 'hidden': ''}`} key={c.id}>
+          <div className={`hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12 ${c.name == '.password' ? 'hidden': ''} ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
             <div
               className="col-span-11"
               onClick={e => {
@@ -264,7 +264,7 @@ const FileListing: FunctionComponent<{ query?: ParsedUrlQuery }> = ({ query }) =
                   title="Copy raw file permalink"
                   className="hover:bg-gray-300 dark:hover:bg-gray-600 p-2 rounded cursor-pointer"
                   onClick={() => {
-                    clipboard.copy(`${getBaseUrl()}/api?path=${path === '/' ? '' : path}/${c.name}&raw=true`)
+                    clipboard.copy(`${getBaseUrl()}/api?path=${path === '/' ? '' : path}/${encodeURIComponent(c.name)}&raw=true`)
                     toast.success('Copied raw file permalink.')
                   }}
                 >
