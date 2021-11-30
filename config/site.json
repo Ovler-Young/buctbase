@@ -9,7 +9,7 @@
   ],
   "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by ZAC & BUCTBASE.",
   "protectedRoutes": [
-    "/内部资料"
+    "/hidden"
   ],
   "contact": {
     "email": "mailto:zhadui@buctbase.com",
