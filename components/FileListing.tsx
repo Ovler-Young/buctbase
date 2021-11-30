@@ -246,7 +246,7 @@ const FileListing: FunctionComponent<{ query?: ParsedUrlQuery }> = ({ query }) =
               <FileListItem fileContent={c} />
             </div>
             {c.folder ? (
-              <div className="md:flex dark:text-gray-400 hidden p-1 text-gray-700">
+              <div className={`md:flex dark:text-gray-400 hidden p-1 text-gray-700 ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
                 <span
                   title="Copy folder permalink"
                   className="hover:bg-gray-300 dark:hover:bg-gray-600 p-2 rounded cursor-pointer"
