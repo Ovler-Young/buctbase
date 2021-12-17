@@ -1,20 +1,21 @@
 {
-  "icon": "/icons/128.png",
-  "title": "Spencer's OneDrive Index",
+  "maxItems": 100,
+  "googleFont": "Inter",
+  "icon": "/icons/icon.PNG",
+  "title": "BUCTBASE",
   "maxItems": 100,
   "googleFont": "Inter",
   "googleFontWeights": [
     "400",
     "700"
   ],
-  "footer": "Powered by <a class=\"hover:border-b-2\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by SpencerWoo.",
+  "footer": "Powered by <a class=\"hover:underline\" href=\"https://github.com/spencerwooo/onedrive-vercel-index\" target=\"_blank\" rel=\"noopener noreferrer\">onedrive-vercel-index</a>. Made with ❤ by ZAC & BUCTBASE.",
   "protectedRoutes": [
-    "/🌞 Private folder/u-need-a-password",
-    "/🥟 Some test files/Protected route"
+    "/hidden"
   ],
   "contact": {
-    "email": "mailto:spencer.wushangbo@gmail.com",
-    "telegram": "https://t.me/realSpencerWoo",
-    "github": "https://github.com/spencerwooo/onedrive-vercel-index"
+    "email": "mailto:zhadui@buctbase.com",
+    "github": "https://github.com/buctbase/buctbase",
+    "qq": "https://qm.qq.com/cgi-bin/qm/qr?k=FdhVoyE5kG44805-6slZwoM3pw9kmFl6&jump_from=webapi"
   }
 }
