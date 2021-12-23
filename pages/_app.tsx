@@ -39,6 +39,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import * as Icons from '@fortawesome/free-brands-svg-icons'
 
+
 import type { AppProps } from 'next/app'
 import NextNProgress from 'nextjs-progressbar'
 
