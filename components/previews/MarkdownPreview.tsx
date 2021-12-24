@@ -11,14 +11,14 @@ import 'katex/dist/katex.min.css'
 import FourOhFour from '../FourOhFour'
 import Loading from '../Loading'
 import DownloadBtn from '../DownloadBtn'
-import { useStaleSWR } from '../../utils/tools'
+import { useStaleSWR } from '../../utils/fetchWithSWR'
 
 const MarkdownPreview: FunctionComponent<{ file: any; path: string; standalone?: boolean }> = ({
   file,
   path,
   standalone = true,
 }) => {
-  const { data, error } = useStaleSWR(file['@microsoft.graph.downloadUrl'])
+  const { data, error } = useStaleSWR({ url: file['@microsoft.graph.downloadUrl'] })
 
   // The parent folder of the markdown file, which is also the relative image folder
   const parentPath = path.substring(0, path.lastIndexOf('/'))
@@ -67,14 +67,14 @@ const MarkdownPreview: FunctionComponent<{ file: any; path: string; standalone?:
 
   if (error) {
     return (
-      <div className={`${standalone ? 'shadow bg-white dark:bg-gray-900 rounded p-3' : ''}`}>
+      <div className={`${standalone ? 'bg-white dark:bg-gray-900 rounded p-3' : ''}`}>
         <FourOhFour errorMsg={error.message} />
       </div>
     )
   }
   if (!data) {
     return (
-      <div className={standalone ? 'shadow bg-white dark:bg-gray-900 rounded p-3' : ''}>
+      <div className={standalone ? 'bg-white dark:bg-gray-900 rounded p-3' : ''}>
         <Loading loadingText="Loading file content..." />
       </div>
     )
@@ -85,7 +85,7 @@ const MarkdownPreview: FunctionComponent<{ file: any; path: string; standalone?:
       <div
         className={
           standalone
-            ? 'markdown-body shadow bg-white dark:bg-gray-900 rounded p-3 dark:text-white'
+            ? 'markdown-body bg-white dark:bg-gray-900 rounded p-3 dark:text-white'
             : 'markdown-body p-3 dark:text-white'
         }
       >
