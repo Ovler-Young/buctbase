@@ -47,6 +47,7 @@ const extensions = {
   flv: icons.video,
   mkv: icons.video,
   mp4: icons.video,
+  mov: icons.video,
 
   '7z': icons.archive,
   bz2: icons.archive,
