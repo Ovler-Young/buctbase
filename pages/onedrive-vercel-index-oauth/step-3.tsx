@@ -55,7 +55,7 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
       setButtonError(true)
       setButtonContent(
         <div>
-          <span>You're ${data.userPrincipalName}. Do not pretend to be the site owner</span> <FontAwesomeIcon icon="exclamation-circle" />
+          <span>You are ${data.userPrincipalName}. Do not pretend to be the site owner</span> <FontAwesomeIcon icon="exclamation-circle" />
         </div>
       )
       return
