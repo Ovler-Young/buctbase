@@ -55,7 +55,10 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
       setButtonError(true)
       setButtonContent(
         <div>
-          <span>You are ${data.userPrincipalName}. Do not pretend to be the site owner</span> <FontAwesomeIcon icon="exclamation-circle" />
+                      <span>
+                        Acquired access_token:{' '}
+                        <code className="text-sm font-mono opacity-80">{`${data.userPrincipalName}...`}</code>
+                      </span>
         </div>
       )
       return
