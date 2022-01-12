@@ -80,7 +80,7 @@ const FileListItem: FC<{
     <div className="grid items-center grid-cols-10 px-3 py-2.5 space-x-2 cursor-pointer">
       <div className="md:col-span-6 flex items-center col-span-10 space-x-2 truncate">
         {/* <div>{c.file ? c.file.mimeType : 'folder'}</div> */}
-        <div className="flex-shrink-0 w-5 text-center">
+        <div className={`flex-shrink-0 w-5 text-center`}>
           {renderEmoji ? (
             <span>{emojiIcon ? emojiIcon[0] : '📁'}</span>
           ) : (
