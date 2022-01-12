@@ -51,18 +51,6 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
       )
       return
     }
-    if (data.userPrincipalName !== siteConfig.userPrincipalName) {
-      setButtonError(true)
-      setButtonContent(
-        <div>
-                      <span>
-                        Acquired access_token:{' '}
-                        <code className="text-sm font-mono opacity-80">{`${data.userPrincipalName}...`}</code>
-                      </span>
-        </div>
-      )
-      return
-    }
 
     await sendTokenToServer(accessToken, refreshToken, expiryTime)
       .then(() => {
