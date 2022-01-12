@@ -2,7 +2,7 @@
   "userPrincipalName": "zhadui@buctbase.com",
   "icon": "/icons/128.png",
   "title": "Zhaduiii",
-  "baseDirectory": "/Public",
+  "baseDirectory": "/share",
   "maxItems": 100,
   "googleFontSans": "Inter",
   "googleFontMono": "Fira Mono",
