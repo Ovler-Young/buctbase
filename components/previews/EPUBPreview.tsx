@@ -1,11 +1,12 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { ReactReader } from 'react-reader'
 import type { Rendition } from 'epubjs'
 
 import Loading from '../Loading'
-import DownloadBtn from '../DownloadBtn'
+import DownloadButtonGroup from '../DownloadBtnGtoup'
+import { DownloadBtnContainer } from './Containers'
 
-const EPUBPreview: FunctionComponent<{file: any}> = ({ file }) => {
+const EPUBPreview: FC<{ file: any }> = ({ file }) => {
   const [epubContainerWidth, setEpubContainerWidth] = useState(400)
   const epubContainer = useRef<HTMLDivElement>(null)
 
@@ -32,7 +33,7 @@ const EPUBPreview: FunctionComponent<{file: any}> = ({ file }) => {
   }
 
   return (
-    <>
+    <div>
       <div
         className="dark:bg-gray-900 md:p-3 no-scrollbar flex flex-col w-full overflow-scroll bg-white rounded"
         style={{ maxHeight: '90vh' }}
@@ -41,7 +42,7 @@ const EPUBPreview: FunctionComponent<{file: any}> = ({ file }) => {
           <div style={{ position: 'absolute', width: epubContainerWidth, height: '70vh' }}>
             <ReactReader
               url={file['@microsoft.graph.downloadUrl']}
-              getRendition={(rendition) => fixEpub(rendition)}
+              getRendition={rendition => fixEpub(rendition)}
               loadingView={<Loading loadingText="Loading EPUB ..." />}
               location={location}
               locationChanged={onLocationChange}
@@ -51,10 +52,10 @@ const EPUBPreview: FunctionComponent<{file: any}> = ({ file }) => {
           </div>
         </div>
       </div>
-      <div className="mt-4">
-        <DownloadBtn downloadUrl={file['@microsoft.graph.downloadUrl']} />
-      </div>
-    </>
+      <DownloadBtnContainer>
+        <DownloadButtonGroup downloadUrl={file['@microsoft.graph.downloadUrl']} />
+      </DownloadBtnContainer>
+    </div>
   )
 }
 

@@ -41,42 +41,45 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 sticky top-0 bg-opacity-80 border-b border-gray-900/10 backdrop-blur-md z-[100]">
+    <div className="bg-white dark:bg-gray-900 dark:border-gray-500/30 sticky top-0 bg-opacity-80 border-b border-gray-900/10 backdrop-blur-md z-[100]">
       <Toaster />
 
-      <div className="flex items-center justify-between w-full max-w-5xl mx-auto pr-4 py-1">
-        <Link href="/">
+      <div className="flex items-center justify-between w-full mx-auto px-4 py-1">
+        <Link href="/" passHref>
           <a className="dark:text-white hover:opacity-80 flex items-center p-2 space-x-2">
-            <Image src={siteConfig.icon} alt="icon" width="28" height="28" />
-            <span className="sm:block hidden text-lg font-bold">{siteConfig.title}</span>
+            <Image src={siteConfig.icon} alt="icon" width="25" height="25" priority />
+            <span className="sm:block hidden font-bold">{siteConfig.title}</span>
           </a>
         </Link>
 
         <div className="flex items-center space-x-4 text-gray-700">
-          {siteConfig.links.map(l => (
-            <a
-              key={l.name}
-              href={l.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 dark:text-white hover:opacity-80"
-            >
-              <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
-              <span className="text-sm hidden md:inline-block">{l.name}</span>
-            </a>
-          ))}
+          {siteConfig.links.length !== 0 &&
+            siteConfig.links.map((l: { name: string; link: string }) => (
+              <a
+                key={l.name}
+                href={l.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 dark:text-white hover:opacity-80"
+              >
+                <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
+                <span className="text-sm font-medium hidden md:inline-block">{l.name}</span>
+              </a>
+            ))}
 
-          <a href={siteConfig.email} className="flex items-center space-x-2 dark:text-white hover:opacity-80">
-            <FontAwesomeIcon icon={['far', 'envelope']} />
-            <span className="text-sm hidden md:inline-block">Email</span>
-          </a>
+          {siteConfig.email && (
+            <a href={siteConfig.email} className="flex items-center space-x-2 dark:text-white hover:opacity-80">
+              <FontAwesomeIcon icon={['far', 'envelope']} />
+              <span className="text-sm font-medium hidden md:inline-block">Email</span>
+            </a>
+          )}
 
           {tokenPresent && (
             <button
-              className="hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 flex items-center p-2 space-x-2 rounded"
+              className="dark:text-white flex items-center p-2 space-x-2 hover:opacity-80"
               onClick={() => setIsOpen(true)}
             >
-              <span className="text-sm">Logout</span>
+              <span className="text-sm font-medium">Logout</span>
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}

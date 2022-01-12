@@ -1,47 +1,48 @@
-import { useEffect, FunctionComponent } from 'react'
+import { useEffect, FC } from 'react'
 import Prism from 'prismjs'
 
 import { getExtension } from '../../utils/getFileIcon'
-import { useStaleSWR } from '../../utils/fetchWithSWR'
+import useFileContent from '../../utils/fetchOnMount'
 import FourOhFour from '../FourOhFour'
 import Loading from '../Loading'
-import DownloadBtn from '../DownloadBtn'
+import DownloadButtonGroup from '../DownloadBtnGtoup'
+import { DownloadBtnContainer, PreviewContainer } from './Containers'
 
-const CodePreview: FunctionComponent<{ file: any }> = ({ file }) => {
-  const { data, error } = useStaleSWR({ url: file['@microsoft.graph.downloadUrl'] })
+const CodePreview: FC<{ file: any }> = ({ file }) => {
+  const { content, error, validating } = useFileContent(file['@microsoft.graph.downloadUrl'])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       Prism.highlightAll()
     }
-  }, [data])
+  }, [validating])
 
   if (error) {
     return (
-      <div className="dark:bg-gray-900 p-3 bg-white rounded">
-        <FourOhFour errorMsg={error.message} />
-      </div>
+      <PreviewContainer>
+        <FourOhFour errorMsg={error} />
+      </PreviewContainer>
     )
   }
-  if (!data) {
+  if (validating) {
     return (
-      <div className="dark:bg-gray-900 p-3 bg-white rounded">
+      <PreviewContainer>
         <Loading loadingText="Loading file content..." />
-      </div>
+      </PreviewContainer>
     )
   }
 
   return (
-    <>
-      <div className="markdown-body p-3 bg-gray-900 rounded">
+    <div>
+      <PreviewContainer>
         <pre className={`language-${getExtension(file.name)}`}>
-          <code>{data}</code>
+          <code className="font-mono">{content}</code>
         </pre>
-      </div>
-      <div className="mt-4">
-        <DownloadBtn downloadUrl={file['@microsoft.graph.downloadUrl']} />
-      </div>
-    </>
+      </PreviewContainer>
+      <DownloadBtnContainer>
+        <DownloadButtonGroup downloadUrl={file['@microsoft.graph.downloadUrl']} />
+      </DownloadBtnContainer>
+    </div>
   )
 }
 

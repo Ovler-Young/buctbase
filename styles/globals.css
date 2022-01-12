@@ -15,8 +15,7 @@
 }
 
 .react-pdf__Page__canvas {
-  @apply mx-auto;
-  @apply shadow-md;
+  @apply mx-auto border border-gray-300/40 shadow;
 }
 
 .markdown-body ul {
@@ -24,4 +23,8 @@
 }
 .markdown-body ol {
   @apply list-decimal;
+}
+pre[class*='language-'],
+code[class*='language-'] {
+  @apply font-mono !important;
 }

@@ -1,9 +1,10 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import Preview from 'preview-office-docs'
 
-import DownloadBtn from '../DownloadBtn'
+import DownloadButtonGroup from '../DownloadBtnGtoup'
+import { DownloadBtnContainer } from './Containers'
 
-const OfficePreview: FunctionComponent<{ file: any }> = ({ file }) => {
+const OfficePreview: FC<{ file: any }> = ({ file }) => {
   const docContainer = useRef<HTMLDivElement>(null)
   const [docContainerWidth, setDocContainerWidth] = useState(600)
 
@@ -12,14 +13,18 @@ const OfficePreview: FunctionComponent<{ file: any }> = ({ file }) => {
   }, [])
 
   return (
-    <>
+    <div>
       <div className="overflow-scroll" ref={docContainer} style={{ maxHeight: '90vh' }}>
-        <Preview url={encodeURIComponent(file['@microsoft.graph.downloadUrl'])} width={docContainerWidth.toString()} height="800" />
+        <Preview
+          url={encodeURIComponent(file['@microsoft.graph.downloadUrl'])}
+          width={docContainerWidth.toString()}
+          height="600"
+        />
       </div>
-      <div className="mt-4">
-        <DownloadBtn downloadUrl={file['@microsoft.graph.downloadUrl']} />
-      </div>
-    </>
+      <DownloadBtnContainer>
+        <DownloadButtonGroup downloadUrl={file['@microsoft.graph.downloadUrl']} />
+      </DownloadBtnContainer>
+    </div>
   )
 }
 

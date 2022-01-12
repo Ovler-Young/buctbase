@@ -1,7 +1,9 @@
 {
   "clientId": "480a6b80-6dc6-409f-b39d-a894834a3069",
+  "obfuscatedClientSecret": "U2FsdGVkX1/L3Dikwl/yCE2GhSgXPaedHeVEc7fu66YDm6jqZAh24b+ZZMcctBERsOkRDL08QJnByaCNUYZioQ==",
   "redirectUri": "http://localhost/od-cf",
-  "base": "/share",
   "authApi": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-  "driveApi": "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com,b6d230f6-81ed-40ba-9bff-8bc0f789a57b,b531b603-96be-4a1e-859e-e7d5bfd23284/drive"
+  "driveApi": "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com,b6d230f6-81ed-40ba-9bff-8bc0f789a57b,b531b603-96be-4a1e-859e-e7d5bfd23284/drive",
+  "scope": "user.read files.read.all offline_access",
+  "directLinkRegex": ".*hz4z.sharepoint.com.*"
 }
