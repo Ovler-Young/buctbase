@@ -208,7 +208,7 @@ const Navbar = () => {
 
                 <div className="dark:text-gray-100 max-h-32 mt-4 overflow-y-scroll font-mono text-sm">
                   <Image
-                    src="/images/fabulous-come-back-later.png"
+                    src={siteConfig.email}
                     width={912}
                     height={912}
                     alt="微信公众号二维码"
