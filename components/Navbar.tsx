@@ -81,7 +81,7 @@ const Navbar = () => {
               onClick={() => setIsOpenWechat(true)}
             >
               <FontAwesomeIcon icon={['fab', 'weixin']} />
-              <span className="text-sm font-medium">微信公众号</span>
+              <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
             </button>
           )}
           
