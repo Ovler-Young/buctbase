@@ -205,7 +205,10 @@ const Navbar = () => {
                   <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
                   <br/>
                   <p className="text-sm text-gray-500">p.s.手机上请先长按保存图片，然后</p>
-                  <a href="weixin://dl/scan" target="_blank" rel="点我"></a>
+                  <a key="微信扫码" href="weixin://dl/scan" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
+                    <span className="text-sm font-medium hidden md:inline-block">{l.name}</span>
+                  </a>
                   <p className="text-sm text-gray-500">直达微信扫码</p>      
                 </div>
 
