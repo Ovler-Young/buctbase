@@ -197,22 +197,23 @@ const Navbar = () => {
             >
               <div className="dark:bg-gray-900 inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white rounded-lg">
                 <Dialog.Title className="dark:text-gray-100 text-lg font-bold text-gray-900">
-                  Clear all tokens?
+                  公众号二维码
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    These tokens are used to authenticate yourself into password protected folders, clearing them means
-                    that you will need to re-enter the passwords again.
+                    下面的就是公众号二维码
+                    拿起手机扫一扫吧！
                   </p>
                 </div>
 
                 <div className="dark:text-gray-100 max-h-32 mt-4 overflow-y-scroll font-mono text-sm">
-                  {siteConfig.protectedRoutes.map((r, i) => (
-                    <div key={i} className="flex items-center space-x-1">
-                      <FontAwesomeIcon icon="key" />
-                      <span className="truncate">{r}</span>
-                    </div>
-                  ))}
+                  <Image
+                    src="/images/fabulous-come-back-later.png"
+                    width={912}
+                    height={912}
+                    alt="微信公众号二维码"
+                    priority
+                  />
                 </div>
 
                 <div className="flex items-center justify-end mt-8">
@@ -220,14 +221,8 @@ const Navbar = () => {
                     className="focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-400 inline-flex items-center justify-center px-4 py-2 mr-3 space-x-2 text-white bg-blue-500 rounded"
                     onClick={() => setIsOpenWechat(false)}
                   >
-                    Cancel
-                  </button>
-                  <button
-                    className="focus:outline-none focus:ring focus:ring-red-300 hover:bg-red-400 inline-flex items-center justify-center px-4 py-2 space-x-2 text-white bg-red-500 rounded"
-                    onClick={() => clearTokens()}
-                  >
                     <FontAwesomeIcon icon={['far', 'trash-alt']} />
-                    <span>Clear all</span>
+                    <span>好嘞</span>
                   </button>
                 </div>
               </div>
