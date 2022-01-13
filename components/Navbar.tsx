@@ -205,7 +205,7 @@ const Navbar = () => {
                   <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
                   <br/>
                   <p className="text-sm text-gray-500">p.s.手机上请先长按保存图片，然后</p>
-                  <a href="weixin://dl/scan" target="_blank" rel="点我">
+                  <a href="weixin://dl/scan" target="_blank" rel="点我"></a>
                   <p className="text-sm text-gray-500">直达微信扫码</p>      
                 </div>
 
