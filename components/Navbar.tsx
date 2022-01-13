@@ -208,9 +208,9 @@ const Navbar = () => {
 
                 <div className="dark:text-gray-100 max-h-32 mt-4 overflow-y-scroll font-mono text-sm">
                   <Image
-                    src={siteConfig.email}
-                    width={912}
-                    height={912}
+                    src={siteConfig.wechat}
+                    width={300}
+                    height={300}
                     alt="微信公众号二维码"
                     priority
                   />
