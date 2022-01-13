@@ -80,6 +80,7 @@ const Navbar = () => {
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
               onClick={() => setIsOpenWechat(true)}
             >
+              <FontAwesomeIcon icon={['far', 'trash-alt']} />
               <span className="text-sm font-medium">微信公众号</span>
             </button>
           )}
@@ -220,7 +221,6 @@ const Navbar = () => {
                     className="focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-400 inline-flex items-center justify-center px-4 py-2 mr-3 space-x-2 text-white bg-blue-500 rounded"
                     onClick={() => setIsOpenWechat(false)}
                   >
-                    <FontAwesomeIcon icon={['far', 'trash-alt']} />
                     <span>好嘞</span>
                   </button>
                 </div>
