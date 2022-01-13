@@ -209,8 +209,8 @@ const Navbar = () => {
                 <div className="dark:text-gray-100 mt-4 font-mono text-sm">
                   <Image
                     src={siteConfig.wechat}
-                    width={300}
-                    height={300}
+                    width={500}
+                    height={500}
                     alt="微信公众号二维码"
                     priority
                   />
