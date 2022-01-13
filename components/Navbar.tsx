@@ -14,6 +14,7 @@ const Navbar = () => {
   const router = useRouter()
   const [tokenPresent, setTokenPresent] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenWechat, setIsOpenWechat] = useState(false)
 
   useEffect(() => {
     const storedToken = () => {
@@ -166,8 +167,8 @@ const Navbar = () => {
         </Dialog>
       </Transition>
       
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={isOpen} onClose={() => setIsOpenWechat(false)}>
+      <Transition appear show={isOpenWechat} as={Fragment}>
+        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={isOpenWechat} onClose={() => setIsOpenWechat(false)}>
           <div className="min-h-screen px-4 text-center">
             <Transition.Child
               as={Fragment}
