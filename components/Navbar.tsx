@@ -80,8 +80,8 @@ const Navbar = () => {
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
               onClick={() => setIsOpenWechat(true)}
             >
-              <span className="text-sm font-medium">微信公众号</span>
-              <FontAwesomeIcon icon="weixin" />
+              <FontAwesomeIcon icon={['fab', 'weixin']} />
+              <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
             </button>
           )}
           
@@ -200,17 +200,17 @@ const Navbar = () => {
                   公众号二维码
                 </Dialog.Title>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    下面的就是公众号二维码
-                    拿起手机扫一扫吧！
-                  </p>
+                  <p className="text-sm text-gray-500">下面的就是公众号二维码</p>
+                  <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
+                  <br/>
+                  <p className="text-sm text-gray-500">p.s.手机上请先长按保存图片，然后</p><a key="微信扫码" href="weixin://dl/scan" target="_blank" rel="noopener noreferrer"><span className="text-sm text-gray-500">点我</span></a><p className="text-sm text-gray-500">直达微信扫码</p>      
                 </div>
 
-                <div className="dark:text-gray-100 max-h-32 mt-4 overflow-y-scroll font-mono text-sm">
+                <div className="dark:text-gray-100 mt-4 font-mono text-sm">
                   <Image
                     src={siteConfig.wechat}
-                    width={300}
-                    height={300}
+                    width={450}
+                    height={450}
                     alt="微信公众号二维码"
                     priority
                   />
@@ -221,7 +221,6 @@ const Navbar = () => {
                     className="focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-400 inline-flex items-center justify-center px-4 py-2 mr-3 space-x-2 text-white bg-blue-500 rounded"
                     onClick={() => setIsOpenWechat(false)}
                   >
-                    <FontAwesomeIcon icon={['far', 'trash-alt']} />
                     <span>好嘞</span>
                   </button>
                 </div>
