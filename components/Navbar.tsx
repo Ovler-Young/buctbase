@@ -80,7 +80,6 @@ const Navbar = () => {
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
               onClick={() => setIsOpenWechat(true)}
             >
-              <FontAwesomeIcon icon={[fa-weixin]} />
               <span className="text-sm font-medium">微信公众号</span>
             </button>
           )}
