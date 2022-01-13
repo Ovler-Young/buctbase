@@ -421,7 +421,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
           )}
 
           {children.map((c: any) => (
-            <div className="hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12" key={c.id}>
+            <div className={`hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12 ${c.name == '.password' ? 'hidden': ''} ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
               <div
                 className="col-span-10"
                 onClick={e => {

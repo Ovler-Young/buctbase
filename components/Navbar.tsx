@@ -14,6 +14,7 @@ const Navbar = () => {
   const router = useRouter()
   const [tokenPresent, setTokenPresent] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenWechat, setIsOpenWechat] = useState(false)
 
   useEffect(() => {
     const storedToken = () => {
@@ -73,7 +74,17 @@ const Navbar = () => {
               <span className="text-sm font-medium hidden md:inline-block">Email</span>
             </a>
           )}
-
+          
+          {siteConfig.wechat && (
+            <button
+              className="flex items-center space-x-2 dark:text-white hover:opacity-80"
+              onClick={() => setIsOpenWechat(true)}
+            >
+              <span className="text-sm font-medium">微信公众号</span>
+              <FontAwesomeIcon icon="weixin" />
+            </button>
+          )}
+          
           {tokenPresent && (
             <button
               className="dark:text-white flex items-center p-2 space-x-2 hover:opacity-80"
@@ -83,6 +94,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}
+         
         </div>
       </div>
 
@@ -147,6 +159,70 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon icon={['far', 'trash-alt']} />
                     <span>Clear all</span>
+                  </button>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
+      
+      <Transition appear show={isOpenWechat} as={Fragment}>
+        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={isOpenWechat} onClose={() => setIsOpenWechat(false)}>
+          <div className="min-h-screen px-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-100"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-50"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="bg-gray-50 dark:bg-gray-800 fixed inset-0" />
+            </Transition.Child>
+
+            {/* This element is to trick the browser into centering the modal contents. */}
+            <span className="inline-block h-screen align-middle" aria-hidden="true">
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-100"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-50"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="dark:bg-gray-900 inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white rounded-lg">
+                <Dialog.Title className="dark:text-gray-100 text-lg font-bold text-gray-900">
+                  公众号二维码
+                </Dialog.Title>
+                <div className="mt-2">
+                  <p className="text-sm text-gray-500">
+                    下面的就是公众号二维码
+                    拿起手机扫一扫吧！
+                  </p>
+                </div>
+
+                <div className="dark:text-gray-100 max-h-32 mt-4 overflow-y-scroll font-mono text-sm">
+                  <Image
+                    src={siteConfig.wechat}
+                    width={300}
+                    height={300}
+                    alt="微信公众号二维码"
+                    priority
+                  />
+                </div>
+
+                <div className="flex items-center justify-end mt-8">
+                  <button
+                    className="focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-400 inline-flex items-center justify-center px-4 py-2 mr-3 space-x-2 text-white bg-blue-500 rounded"
+                    onClick={() => setIsOpenWechat(false)}
+                  >
+                    <FontAwesomeIcon icon={['far', 'trash-alt']} />
+                    <span>好嘞</span>
                   </button>
                 </div>
               </div>
