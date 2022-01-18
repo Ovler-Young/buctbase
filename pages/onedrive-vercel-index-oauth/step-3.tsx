@@ -51,6 +51,15 @@ export default function OAuthStep3({ accessToken, expiryTime, refreshToken, erro
       )
       return
     }
+    if (data.userPrincipalName !== siteConfig.userPrincipalName) {
+      setButtonError(true)
+      setButtonContent(
+        <div>
+          <span>Do not pretend to be the site owner</span> <FontAwesomeIcon icon="exclamation-circle" />
+        </div>
+      )
+      return
+    }
 
     await sendTokenToServer(accessToken, refreshToken, expiryTime)
       .then(() => {
