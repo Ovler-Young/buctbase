@@ -22,6 +22,7 @@ module.exports = {
   reactStrictMode: true,
   images: {
     loader: 'imgix',
+    path: '',
     options: {
       name: '[contenthash].[ext]',
       publicPath: "_next/image",
