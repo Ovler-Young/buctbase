@@ -25,8 +25,7 @@ module.exports = {
     options: {
       name: '[contenthash].[ext]',
       publicPath: "_next/image",
-      outputPath: "static/worker"
+      outputPath: "static/worker",
     }
-    domains: ['public.dm.files.1drv.com'],
   },
-}
+};
