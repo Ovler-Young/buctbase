@@ -11,7 +11,7 @@ module.exports = {
           options: {
             name: "[contenthash].[ext]",
             publicPath: "_next/static/worker",
-            outputPath: "static/worker"
+            outputPath: "static/worker",
           }
         }
       ]
@@ -21,8 +21,12 @@ module.exports = {
   },
   reactStrictMode: true,
   images: {
-    loader: 'akamai',
-    url: '/',
+    loader: 'imgix',
+    options: {
+      name: '[contenthash].[ext]',
+      publicPath: "_next/image",
+      outputPath: "static/worker"
+    }
     domains: ['public.dm.files.1drv.com'],
   },
 }
