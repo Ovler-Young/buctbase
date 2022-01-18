@@ -22,6 +22,7 @@ module.exports = {
   reactStrictMode: true,
   images: {
     loader: 'akamai',
+    url: '/public/images/',
     domains: ['public.dm.files.1drv.com'],
   },
 }
