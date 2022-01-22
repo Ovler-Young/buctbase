@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { encodePath, getAccessToken } from '.'
 import apiConfig from '../../config/api.json'
+import siteConfig from '../../config/site.json'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Get access token from storage
@@ -21,6 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         headers: { Authorization: `Bearer ${accessToken}` },
         params: {
           select: 'id,name,file,folder,parentReference',
+          top: '10',
         },
       })
       res.status(200).json(data.value)
