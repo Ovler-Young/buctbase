@@ -12,7 +12,13 @@ import { getOdAuthTokens, storeOdAuthTokens } from '../../utils/odAuthTokenStore
 const basePath = pathPosix.resolve('/', siteConfig.baseDirectory)
 const clientSecret = revealObfuscatedToken(apiConfig.obfuscatedClientSecret)
 
-const encodePath = (path: string) => {
+/**
+ * Encode the path of the file relative to the base directory
+ *
+ * @param path Relative path of the file to the base directory
+ * @returns Absolute path of the file inside OneDrive
+ */
+export function encodePath(path: string): string {
   let encodedPath = pathPosix.join(basePath, pathPosix.resolve('/', path))
   if (encodedPath === '/' || encodedPath === '') {
     return ''
@@ -21,7 +27,12 @@ const encodePath = (path: string) => {
   return `:${encodeURIComponent(encodedPath)}`
 }
 
-async function getAccessToken(): Promise<any> {
+/**
+ * Fetch the access token from Redis storage and check if the token requires a renew
+ *
+ * @returns Access token for OneDrive API
+ */
+export async function getAccessToken(): Promise<string> {
   const { accessToken, refreshToken } = await getOdAuthTokens()
 
   // Return in storage access token if it is still valid
