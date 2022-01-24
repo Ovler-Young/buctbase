@@ -67,7 +67,7 @@ const FileListItem: FC<{
     <div className="grid items-center grid-cols-10 px-3 py-2.5 space-x-2 cursor-pointer">
       <div className="md:col-span-6 flex items-center col-span-10 space-x-2 truncate">
         {/* <div>{c.file ? c.file.mimeType : 'folder'}</div> */}
-        <div className="flex-shrink-0 w-5 text-center">
+        <div className={`flex-shrink-0 w-5 text-center`}>
           {renderEmoji ? (
             <span>{emojiIcon ? emojiIcon[0] : '📁'}</span>
           ) : (
@@ -401,7 +401,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
           )}
 
           {children.map((c: any) => (
-            <div className="hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12" key={c.id}>
+            <div className={`hover:bg-gray-100 dark:hover:bg-gray-850 grid grid-cols-12 ${c.name == '.password' ? 'hidden': ''} ${c.name == 'hidden' ? 'hidden': ''}`} key={c.id}>
               <div
                 className="col-span-10"
                 onClick={e => {
