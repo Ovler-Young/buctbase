@@ -9,6 +9,8 @@
   <a href="https://github.com/spencerwooo/onedrive-vercel-index/discussions"><img src="https://img.shields.io/github/discussions/spencerwooo/onedrive-vercel-index?color=CF2B5B&labelColor=black&logo=github" alt="GitHub Discussions" /></a>
 </div>
 
+for dev
+
 ## TL;DR
 
 Showcase, share, preview, and download files inside *your* OneDrive with onedrive-vercel-index -
