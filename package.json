@@ -41,7 +41,8 @@
     "remark-math": "^4.0.0",
     "swr": "^0.5.6",
     "use-clipboard-copy": "^0.2.0",
-    "use-constant": "^1.1.0"
+    "use-constant": "^1.1.0",
+    "countapi-js": "^1.0.2"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.0.2",
