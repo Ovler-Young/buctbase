@@ -4,7 +4,8 @@ on:
   schedule:
     - cron: 0 */48 * * *   # 每隔48小时
 jobs:
-  update_external_airflow_fork:
+  fetch:
+    name: fetch origin
     runs-on: ubuntu-latest
     steps:
       - uses: TobKed/github-forks-sync-action@master
@@ -16,3 +17,17 @@ jobs:
            target_branch: origin  # 默认推送到你的仓库 master 分支
            force: false  # 是否强制推送
            tags: true  # 确定是否使用 - tags
+  scan:
+    name: npm audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: npm ci
+      - uses: oke-py/npm-audit-action@v1.8.4
+        with:
+          audit_level: moderate
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_assignees: oke-py
+          issue_labels: vulnerability,test
+          dedupe_issues: true
