@@ -6,7 +6,8 @@ export default async (req, res) => {
     return provideBadge(res, 'error', 'No id provided', 'critical')
   }
 
-  const { value } = await countapi.hit('hitsbadge', req.query.id)
-
+  const { value } = await countapi.hit('hitsbadge', req.query.id) 
+  '以后加个前缀buctbase'
+  
   provideBadge(res, 'hits', value, 'brightgreen')
 };
