@@ -33,7 +33,7 @@
     "react-hotkeys-hook": "^3.4.4",
     "react-markdown": "^6.0.2",
     "react-player": "^2.9.0",
-    "react-reader": "^0.20.4",
+    "react-reader": "^0.20.5",
     "react-viewer": "^3.2.2",
     "rehype-katex": "^5.0.0",
     "rehype-raw": "^6.0.0",
