@@ -8,6 +8,6 @@ export default async (req, res) => {
 
   const { value } = await countapi.hit('hitsbadge', req.query.id) 
   '以后加个前缀buctbase'
-  
-  provideBadge(res, 'hits', value, 'brightgreen')
+
+  provideBadge(res, 'vivitors', value, 'brightgreen')
 };
