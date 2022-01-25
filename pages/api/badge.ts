@@ -1,5 +1,5 @@
 import countapi from 'countapi-js'
-import provideBadge from '../utils/provide-badge'
+import provideBadge from '../../utils/provide-badge'
 
 export default async (req, res) => {
   if (!req.query.id) {
