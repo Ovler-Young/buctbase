@@ -17,9 +17,3 @@ jobs:
            target_branch: origin  # 默认推送到你的仓库 master 分支
            force: false  # 是否强制推送
            tags: true  # 确定是否使用 - tags
-  npm-audit-fix:
-    name: npm fix Dependabot 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ybiquitous/npm-audit-fix-action@v3
