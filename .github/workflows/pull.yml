@@ -1,6 +1,7 @@
 name: fetch origin
 on:
   push:
+      branches: main
   schedule:
     - cron: 0 */48 * * *   # 每隔48小时
 jobs:
