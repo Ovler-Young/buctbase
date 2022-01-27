@@ -23,7 +23,7 @@ jobs:
         cache: 'npm'
     - run: npm i -g npm@latest
     - run: npm i npm@latest
-    - run: npm audit fix    
+    - run: npm audit fix  --force
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
