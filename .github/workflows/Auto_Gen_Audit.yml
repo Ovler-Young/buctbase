@@ -22,5 +22,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm audit fix
-    - run: git commit  -m "fix audit"
+    - run: git commit -a -m "fix audit"
     - run: git push origin main:audit
