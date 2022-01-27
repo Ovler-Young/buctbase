@@ -21,6 +21,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm audit fix
-    - run: git commit -a -m "fix audit"
-    - run: git push origin main:audit
+    - run: npm audit fix    
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        assignees: gchengyu
