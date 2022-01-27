@@ -17,11 +17,12 @@
     "@headlessui/react": "^1.4.0",
     "awesome-debounce-promise": "^2.1.0",
     "axios": "^0.21.1",
+    "countapi-js": "^1.0.2",
     "crypto-js": "^4.1.1",
     "emoji-regex": "^9.2.2",
     "ioredis": "^4.28.2",
     "jszip": "^3.7.1",
-    "next": "^12.0.7",
+    "next": "^12.0.9",
     "nextjs-progressbar": "^0.0.13",
     "preview-office-docs": "^1.0.2",
     "prismjs": "^1.26.0",
@@ -41,8 +42,7 @@
     "remark-math": "^4.0.0",
     "swr": "^0.5.6",
     "use-clipboard-copy": "^0.2.0",
-    "use-constant": "^1.1.0",
-    "countapi-js": "^1.0.2"
+    "use-constant": "^1.1.0"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.0.2",
