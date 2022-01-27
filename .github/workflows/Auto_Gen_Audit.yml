@@ -21,6 +21,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm i -g npm@latest
+    - run: npm i npm@latest
     - run: npm audit fix    
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
