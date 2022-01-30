@@ -26,11 +26,6 @@ const Navbar = () => {
 
   useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)
 
-  const [searchOpen, setSearchOpen] = useState(false)
-  const openSearchBox = () => setSearchOpen(true)
-
-  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)
-
   useEffect(() => {
     const storedToken = () => {
       for (const r of siteConfig.protectedRoutes) {
