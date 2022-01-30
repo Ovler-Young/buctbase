@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Fragment, useEffect, useState } from 'react'
 
-import siteConfig from '../config/site.json'
+import siteConfig from '../config/site.config'
 import SearchModal from './SearchModal'
 import useDeviceOS from '../utils/useDeviceOS'
 
@@ -20,6 +20,11 @@ const Navbar = () => {
   const [tokenPresent, setTokenPresent] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenWechat, setIsOpenWechat] = useState(false)
+
+  const [searchOpen, setSearchOpen] = useState(false)
+  const openSearchBox = () => setSearchOpen(true)
+
+  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)
 
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearchBox = () => setSearchOpen(true)
