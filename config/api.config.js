@@ -23,7 +23,7 @@ module.exports = {
   driveApi: "https://graph.microsoft.com/v1.0/sites/hz4z.sharepoint.com,b6d230f6-81ed-40ba-9bff-8bc0f789a57b,b531b603-96be-4a1e-859e-e7d5bfd23284/drive",
 
   // The scope we require are listed here, in most cases you would not need to change this as well.
-  scope: "user.read files.read.all offline_access",
+  scope: 'user.read files.read.all offline_access',
 
   // The directLinkRegex is used to match the direct link of the file from the response of the API. We originally use this to prevent
   // unauthorised use of the proxied download feature - but that is disabled for now. So you can safely ignore this settings.
