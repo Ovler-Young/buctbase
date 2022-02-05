@@ -4,8 +4,8 @@
 name: Auto Gen Audit 
 
 on:
-  push:
-    branches: main
+#  push:
+#    branches: main
 
 jobs:
   build:
