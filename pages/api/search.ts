@@ -12,7 +12,7 @@ import siteConfig from '../../config/site.config'
  * @returns Sanitised query string which replaces non-alphanumeric characters with ' '
  */
 function sanitiseQuery(query: string): string {
-  const sanitisedQuery = query.replace(/[^a-zA-Z0-9]/g, ' ')
+  const sanitisedQuery = query
   return encodeURIComponent(sanitisedQuery)
 }
 
