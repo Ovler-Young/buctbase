@@ -244,7 +244,8 @@ const Navbar = () => {
                   <p className="text-sm text-gray-500">下面的就是公众号二维码</p>
                   <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
                   <br/>
-                  <p className="text-sm text-gray-500">p.s.手机上请先长按保存图片，然后</p><a key="微信扫码" href="weixin://dl/scan" target="_blank" rel="noopener noreferrer"><span className="text-sm text-gray-500">点我</span></a><p className="text-sm text-gray-500">直达微信扫码</p>      
+                  <p className="text-sm text-gray-500">p.s.1 图片可能加载较慢，请稍后！</p>
+                  <p className="text-sm text-gray-500">p.s.2 手机上请先长按保存图片，然后</p><span className="text-sm text-gray-500">前往微信扫码</p>      
                 </div>
 
                 <div className="dark:text-gray-100 mt-4 font-mono text-sm">
