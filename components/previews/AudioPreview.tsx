@@ -3,10 +3,12 @@ import { FC, useState } from 'react'
 
 import ReactAudioPlayer from 'react-audio-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTranslation } from 'next-i18next'
 
 import DownloadButtonGroup from '../DownloadBtnGtoup'
 import { DownloadBtnContainer, PreviewContainer } from './Containers'
 import { LoadingIcon } from '../Loading'
+import { formatModifiedDateTime } from '../../utils/fileDetails'
 
 enum PlayerState {
   Loading,
@@ -17,6 +19,8 @@ enum PlayerState {
 
 const AudioPreview: FC<{ file: OdFileObject }> = ({ file }) => {
   const [playerStatus, setPlayerStatus] = useState(PlayerState.Loading)
+
+  const { t } = useTranslation()
 
   return (
     <>
@@ -36,11 +40,7 @@ const AudioPreview: FC<{ file: OdFileObject }> = ({ file }) => {
           <div className="flex w-full flex-col space-y-2">
             <div>{file.name}</div>
             <div className="pb-4 text-sm text-gray-500">
-              Last modified:{' '}
-              {new Date(file.lastModifiedDateTime).toLocaleString(undefined, {
-                dateStyle: 'short',
-                timeStyle: 'short',
-              })}
+              {t('Last modified:') + ' ' + formatModifiedDateTime(file.lastModifiedDateTime)}
             </div>
 
             <ReactAudioPlayer

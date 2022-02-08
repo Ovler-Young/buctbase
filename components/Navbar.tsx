@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Fragment, useEffect, useState } from 'react'
+import { useTranslation } from 'next-i18next'
 
 import siteConfig from '../config/site.config'
 import SearchModal from './SearchModal'
@@ -24,7 +25,10 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearchBox = () => setSearchOpen(true)
 
-  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)
+  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, e => {
+    openSearchBox()
+    e.preventDefault()
+  })
 
   useEffect(() => {
     const storedToken = () => {
@@ -38,6 +42,8 @@ const Navbar = () => {
     setTokenPresent(storedToken())
   }, [])
 
+  const { t } = useTranslation()
+
   const clearTokens = () => {
     setIsOpen(false)
 
@@ -45,7 +51,7 @@ const Navbar = () => {
       localStorage.removeItem(r)
     })
 
-    toast.success('Cleared all tokens')
+    toast.success(t('Cleared all tokens'))
     setTimeout(() => {
       router.reload()
     }, 1000)
@@ -72,7 +78,7 @@ const Navbar = () => {
           >
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon className="h-4 w-4" icon="search" />
-              <span className="text-sm font-medium">Search ...</span>
+              <span className="text-sm font-medium">{t('Search ...')}</span>
             </div>
 
             <div className="flex items-center space-x-1">
@@ -93,14 +99,20 @@ const Navbar = () => {
                 className="flex items-center space-x-2 hover:opacity-80 dark:text-white"
               >
                 <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
-                <span className="hidden text-sm font-medium md:inline-block">{l.name}</span>
+                <span className="hidden text-sm font-medium md:inline-block">
+                  {
+                    // Append link name comments here to add translations
+                    // t('Weibo')
+                    t(l.name)
+                  }
+                </span>
               </a>
             ))}
 
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
               <FontAwesomeIcon icon={['far', 'envelope']} />
-              <span className="hidden text-sm font-medium md:inline-block">Email</span>
+              <span className="hidden text-sm font-medium md:inline-block">{t('Email')}</span>
             </a>
           )}
           
@@ -119,7 +131,7 @@ const Navbar = () => {
               className="flex items-center space-x-2 p-2 hover:opacity-80 dark:text-white"
               onClick={() => setIsOpen(true)}
             >
-              <span className="text-sm font-medium">Logout</span>
+              <span className="text-sm font-medium">{t('Logout')}</span>
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}
@@ -157,12 +169,12 @@ const Navbar = () => {
             >
               <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle transition-all dark:bg-gray-900">
                 <Dialog.Title className="text-lg font-bold text-gray-900 dark:text-gray-100">
-                  Clear all tokens?
+                  {t('Clear all tokens?')}
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    These tokens are used to authenticate yourself into password protected folders, clearing them means
-                    that you will need to re-enter the passwords again.
+                    {t('These tokens are used to authenticate yourself into password protected folders, ') +
+                      t('clearing them means that you will need to re-enter the passwords again.')}
                   </p>
                 </div>
 
@@ -180,14 +192,14 @@ const Navbar = () => {
                     className="mr-3 inline-flex items-center justify-center space-x-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    Cancel
+                    {t('Cancel')}
                   </button>
                   <button
                     className="inline-flex items-center justify-center space-x-2 rounded bg-red-500 px-4 py-2 text-white hover:bg-red-400 focus:outline-none focus:ring focus:ring-red-300"
                     onClick={() => clearTokens()}
                   >
                     <FontAwesomeIcon icon={['far', 'trash-alt']} />
-                    <span>Clear all</span>
+                    <span>{t('Clear all')}</span>
                   </button>
                 </div>
               </div>
