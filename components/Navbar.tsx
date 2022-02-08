@@ -245,7 +245,7 @@ const Navbar = () => {
                   <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
                   <br/>
                   <p className="text-sm text-gray-500">p.s.1 图片可能加载较慢，请稍后！</p>
-                  <p className="text-sm text-gray-500">p.s.2 手机上请先长按保存图片，然后</p><span className="text-sm text-gray-500">前往微信扫码</p>      
+                  <p className="text-sm text-gray-500">p.s.2 手机上请先长按保存图片，然后前往微信扫码</p>      
                 </div>
 
                 <div className="dark:text-gray-100 mt-4 font-mono text-sm">
