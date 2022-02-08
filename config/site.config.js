@@ -56,7 +56,12 @@ module.exports = {
     },
     {
       "name": "qq",
-      "link": "https://qm.qq.com/cgi-bin/qm/qr?k=FdhVoyE5kG44805-6slZwoM3pw9kmFl6&jump_from=webapi"
-    }
-  ]
+      "link": "https://qm.qq.com/cgi-bin/qm/qr?k=FdhVoyE5kG44805-6slZwoM3pw9kmFl6&jump_from=webapi",
+    },
+  ],
+
+  // This is a day.js-style datetime format string to format datetimes in the app. Ref to
+  // https://day.js.org/docs/en/display/format for detailed specification. The default value is ISO 8601 full datetime
+  // without timezone and replacing T with space.
+  datetimeFormat: 'YYYY-MM-DD HH:mm:ss',
 }
