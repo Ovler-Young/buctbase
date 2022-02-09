@@ -13,7 +13,12 @@ import { getReadablePath } from '../utils/getReadablePath'
 import { Downloading, Checkbox, formatChildName, ChildIcon } from './FileListing'
 
 const FileListItem: FC<{ fileContent: OdFolderChildren }> = ({ fileContent: c }) => {
-  return (
+  // remove everything whose c.name is hidden
+  const isHidden = c.name == 'hidden' 
+  if (isHidden) {
+    return null
+  }
+  else return (
     <div className="grid cursor-pointer grid-cols-10 items-center space-x-2 px-3 py-2.5">
       <div className="col-span-10 flex items-center space-x-2 truncate md:col-span-6" title={c.name}>
         <div className="w-5 flex-shrink-0 text-center">
