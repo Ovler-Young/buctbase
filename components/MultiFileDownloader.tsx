@@ -7,12 +7,12 @@ import { fetcher } from '../utils/fetchWithSWR'
 import { getStoredToken } from '../utils/protectedRouteHandler'
 
 /**
- * Generates a loading toast with file download progress support
- * @param router Next router instance, used for reloading the page
- * @param progress Current downloading and compression progress (returned by jszip metadata)
- * @returns Toast component with loading progress
+ * A loading toast component with file download progress support
+ * @param props
+ * @param props.router Next router instance, used for reloading the page
+ * @param props.progress Current downloading and compression progress (returned by jszip metadata)
  */
-export function DownloadingToast(router: NextRouter, progress?: string) {
+export function DownloadingToast({ router, progress }: { router: NextRouter; progress?: string }) {
   const { t } = useTranslation()
 
   return (
@@ -21,13 +21,13 @@ export function DownloadingToast(router: NextRouter, progress?: string) {
         <span>{progress ? t('Downloading {{progress}}%', { progress }) : t('Downloading selected files...')}</span>
 
         <div className="relative mt-2">
-          <div className="overflow-hidden h-1 flex rounded bg-gray-100">
-            <div style={{ width: `${progress}%` }} className="text-white bg-gray-500 transition-all duration-100"></div>
+          <div className="flex h-1 overflow-hidden rounded bg-gray-100">
+            <div style={{ width: `${progress}%` }} className="bg-gray-500 text-white transition-all duration-100"></div>
           </div>
         </div>
       </div>
       <button
-        className="p-2 rounded bg-red-500 hover:bg-red-400 text-white focus:outline-none focus:ring focus:ring-red-300"
+        className="rounded bg-red-500 p-2 text-white hover:bg-red-400 focus:outline-none focus:ring focus:ring-red-300"
         onClick={() => router.reload()}
       >
         {t('Cancel')}
@@ -84,7 +84,7 @@ export async function downloadMultipleFiles({
 
   // Create zip file and download it
   const b = await zip.generateAsync({ type: 'blob' }, metadata => {
-    toast.loading(DownloadingToast(router, metadata.percent.toFixed(0)), {
+    toast.loading(<DownloadingToast router={router} progress={metadata.percent.toFixed(0)} />, {
       id: toastId,
     })
   })
@@ -152,7 +152,7 @@ export async function downloadTreelikeMultipleFiles({
 
   // Create zip file and download it
   const b = await zip.generateAsync({ type: 'blob' }, metadata => {
-    toast.loading(DownloadingToast(router, metadata.percent.toFixed(0)), {
+    toast.loading(<DownloadingToast router={router} progress={metadata.percent.toFixed(0)} />, {
       id: toastId,
     })
   })

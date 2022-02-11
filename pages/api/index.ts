@@ -131,6 +131,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // If method is GET, then the API is a normal request to the OneDrive API for files or folders
   const { path = '/', raw = false, next = '' } = req.query
 
+  // Set edge function caching for faster load times, check docs:
+  // https://vercel.com/docs/concepts/functions/edge-caching
+  res.setHeader('Cache-Control', 'max-age=0, s-maxage=600, stale-while-revalidate')
+
   // Sometimes the path parameter is defaulted to '[...path]' which we need to handle
   if (path === '[...path]') {
     res.status(400).json({ error: 'No path specified.' })
@@ -220,7 +224,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       headers: { Authorization: `Bearer ${accessToken}` },
       params: {
         select: '@microsoft.graph.downloadUrl,name,size,id,lastModifiedDateTime,folder,file,video,image',
-        $expand: 'thumbnails',
       },
     })
 
@@ -230,13 +233,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         params: next
           ? {
               select: '@microsoft.graph.downloadUrl,name,size,id,lastModifiedDateTime,folder,file,video,image',
-              $expand: 'thumbnails',
               top: siteConfig.maxItems,
               $skipToken: next,
             }
           : {
               select: '@microsoft.graph.downloadUrl,name,size,id,lastModifiedDateTime,folder,file,video,image',
-              $expand: 'thumbnails',
               top: siteConfig.maxItems,
             },
       })

@@ -12,17 +12,8 @@ import { getReadablePath } from '../utils/getReadablePath'
 import { Checkbox, ChildIcon, Downloading, formatChildName } from './FileListing'
 
 const GridItem = ({ c, path }: { c: OdFolderChildren; path: string }) => {
-  // We use the generated medium thumbnail for rendering preview images
-  const thumbnailUrl =
-    'folder' in c
-      ? // Folders don't have thumbnails
-        null
-      : c.thumbnails && c.thumbnails.length > 0
-      ? // Most OneDrive versions, including E5 developer, should have thumbnails returned
-        c.thumbnails[0].medium.url
-      : // According to OneDrive docs, OneDrive for Business and SharePoint does not
-        // (can not retrieve thumbnails via expand). But currently we only see OneDrive 世纪互联 really does not.
-        `/api/thumbnail?path=${path}`
+  // We use the generated medium thumbnail for rendering preview images (excluding folders)
+  const thumbnailUrl = 'folder' in c ? null : `/api/thumbnail?path=${path}&size=medium`
 
   // Some thumbnails are broken, so we check for onerror event in the image component
   const [brokenThumbnail, setBrokenThumbnail] = useState(false)
@@ -111,7 +102,7 @@ const FolderGridLayout = ({
         {folderChildren.map((c: OdFolderChildren) => (
           <div
             key={c.id}
-            className="group relative overflow-hidden rounded transition-all duration-100 hover:bg-gray-100 dark:hover:bg-gray-850"
+            className={`group relative overflow-hidden rounded transition-all duration-100 hover:bg-gray-100 dark:hover:bg-gray-850 ${c.name == '.password' ? 'hidden': ''} ${c.name == 'hidden' ? 'hidden': ''}`}
           >
             <div className="absolute top-0 right-0 z-10 m-1 rounded bg-white/50 py-0.5 opacity-0 transition-all duration-100 group-hover:opacity-100 dark:bg-gray-900/50">
               {c.folder ? (
