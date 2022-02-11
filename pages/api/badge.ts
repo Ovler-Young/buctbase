@@ -1,8 +1,9 @@
 import countapi from 'countapi-js'
 import provideBadge from '../../utils/provide-badge'
-import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//import type { NextApiRequest, NextApiResponse } from 'next'
+
+export default async (req: { query: { id: string; }; }, res:  { query: { id: string; }; }) => {
   if (!req.query.id) {
     return provideBadge(res, 'error', 'No id provided', 'critical')
   }
