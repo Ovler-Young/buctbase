@@ -45,6 +45,9 @@ module.exports = {
   // [OPTIONAL] Use "" here if you want to remove this email address from the nav bar.
   email: "mailto:zhadui@buctbase.com",
   
+  // your txc app id
+  txc: "https://support.qq.com/products/380549",
+
   wechat: "/images/wechatqr.png",
   // [OPTIONAL] This is an array of names and links for setting your social information and links.
   // In the latest update, all brand icons inside font awesome is supported and the icon to render is based on the name

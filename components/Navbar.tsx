@@ -118,7 +118,14 @@ const Navbar = () => {
               <span className="hidden text-sm font-medium md:inline-block">{t('Email')}</span>
             </a>
           )}
-          
+
+          {siteConfig.txc && (
+            <a href={siteConfig.txc} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
+              <FontAwesomeIcon icon={['far', 'comment']} />
+              <span className="hidden text-sm font-medium md:inline-block">兔小巢</span>
+            </a>
+          )}
+
           {siteConfig.wechat && (
             <button
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
