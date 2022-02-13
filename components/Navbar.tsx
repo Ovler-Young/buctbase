@@ -121,7 +121,7 @@ const Navbar = () => {
 
           {siteConfig.txc && (
             <a href={siteConfig.txc} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
-              <FontAwesomeIcon icon={['far', 'comment']} />
+              <FontAwesomeIcon icon={['fab', 'comment']} />
               <span className="hidden text-sm font-medium md:inline-block">兔小巢</span>
             </a>
           )}
@@ -135,7 +135,6 @@ const Navbar = () => {
               <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
             </button>
           )}
-          
           {tokenPresent && (
             <button
               className="flex items-center space-x-2 p-2 hover:opacity-80 dark:text-white"

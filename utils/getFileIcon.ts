@@ -43,6 +43,7 @@ const extensions = {
   oga: icons.audio,
   opus: icons.audio,
   m4a: icons.audio,
+  wma: icons.audio,
 
   avi: icons.video,
   flv: icons.video,
