@@ -25,6 +25,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faSearch,
+  faPen,
   faCheck,
   faPlus,
   faMinus,
@@ -110,6 +111,7 @@ library.add(
   faThLarge,
   faThList,
   faLanguage,
+  faPen,
   ...iconList
 )
 
