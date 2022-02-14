@@ -133,7 +133,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Set edge function caching for faster load times, check docs:
   // https://vercel.com/docs/concepts/functions/edge-caching
-  res.setHeader('Cache-Control', 'max-age=0, s-maxage=600, stale-while-revalidate')
+  res.setHeader('Cache-Control', apiConfig.cacheControlHeader)
 
   // Sometimes the path parameter is defaulted to '[...path]' which we need to handle
   if (path === '[...path]') {
@@ -160,6 +160,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Fetch password from remote file content
   if (authTokenPath !== '') {
+    // Don't server cached response for password protected folders
+    res.setHeader('Cache-Control', 'no-cache')
+
     try {
       const token = await axios.get(`${apiConfig.driveApi}/root${encodePath(authTokenPath)}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
