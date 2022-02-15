@@ -237,6 +237,8 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
       const folder = folderName ? decodeURIComponent(folderName) : undefined
       const files = getFiles()
         .filter(c => selected[c.id])
+        // remove readme.md and hidden        
+        .filter(c => c.name !== 'hidden' && !c.name.startsWith('.'))
         .map(c => ({ name: c.name, url: c['@microsoft.graph.downloadUrl'] }))
 
       if (files.length == 1) {

@@ -75,6 +75,7 @@ export const extensions = {
   oga: preview.audio,
   opus: preview.audio,
   flac: preview.audio,
+  wma: preview.audio,
 
   epub: preview.epub,
 

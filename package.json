@@ -15,12 +15,13 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@headlessui/react": "^1.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "awesome-debounce-promise": "^2.1.0",
     "axios": "^0.25.0",
     "cors": "^2.8.5",
+    "countapi-js": "^1.0.2",
     "crypto-js": "^4.1.1",
     "csstype": "^2.6.2",
     "dayjs": "^1.10.7",
@@ -58,7 +59,7 @@
     "@types/crypto-js": "^4.0.2",
     "@types/ioredis": "^4.28.5",
     "@types/prismjs": "^1.16.5",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.39",
     "@types/react-copy-to-clipboard": "^5.0.0",
     "@types/react-dom": "^17.0.8",
     "@types/react-pdf": "^5.0.4",
@@ -73,5 +74,13 @@
     "prettier-plugin-tailwindcss": "^0.1.4",
     "tailwindcss": "^3.0.18",
     "typescript": "4.5.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "axios@<=0.21.1": ">=0.21.2",
+      "axios@<0.21.1": ">=0.21.1",
+      "follow-redirects@<1.14.7": ">=1.14.7",
+      "glob-parent@<5.1.2": ">=5.1.2"
+    }
   }
 }

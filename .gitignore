@@ -36,6 +36,9 @@ yarn-error.log*
 # redis dump
 dump.rdb
 
+# env
+.env
+
 # General
 .DS_Store
 .AppleDouble

@@ -5,7 +5,8 @@ import apiConfig from '../config/api.config'
 
 // Just a disguise to obfuscate required tokens (including but not limited to client secret,
 // access tokens, and refresh tokens), used along with the following two functions
-const AES_SECRET_KEY = 'onedrive-vercel-index'
+//const AES_SECRET_KEY = 'onedrive-vercel-index'
+const AES_SECRET_KEY = (apiConfig.aessecretkey)
 export function obfuscateToken(token: string): string {
   // Encrypt token with AES
   const encrypted = CryptoJS.AES.encrypt(token, AES_SECRET_KEY)
