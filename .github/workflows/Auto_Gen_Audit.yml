@@ -28,7 +28,7 @@ jobs:
       run: pnpm install
 
     - name: Fix packages
-      run: pnpm audit fix 
+      run: pnpm audit --fix 
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
