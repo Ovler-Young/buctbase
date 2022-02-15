@@ -23,7 +23,7 @@
     "cors": "^2.8.5",
     "countapi-js": "^1.0.2",
     "crypto-js": "^4.1.1",
-    "csstype": "^2.6.2",
+    "csstype": "^3.0.10",
     "dayjs": "^1.10.7",
     "emoji-regex": "^10.0.0",
     "ioredis": "^4.28.2",
