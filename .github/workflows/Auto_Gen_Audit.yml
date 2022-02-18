@@ -34,6 +34,9 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         assignees: Ovler-Young
-        title: Update to fix Security issues in ${{ github.ref_name }}
+        title: Update to fix Security dependences in ${{ github.ref_name }}
         labels: Auto PR
         branch: securityFix_${{ github.ref_name }}
+        commit-message: Update to fix Security dependences in ${{ github.ref_name }}
+        reviewers: Ovler-Young
+        branch-suffix: timestamp
