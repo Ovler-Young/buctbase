@@ -1,9 +1,9 @@
+import type { OdFileObject, OdFolderChildren, OdFolderObject } from '../types'
+import { ParsedUrlQuery } from 'querystring'
+import { FC, MouseEventHandler, SetStateAction, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import toast, { Toaster } from 'react-hot-toast'
 import emojiRegex from 'emoji-regex'
-
-import { ParsedUrlQuery } from 'querystring'
-import { FC, MouseEventHandler, SetStateAction, useEffect, useRef, useState } from 'react'
 
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
@@ -12,7 +12,8 @@ import { useTranslation } from 'next-i18next'
 import useLocalStorage from '../utils/useLocalStorage'
 import { getPreviewType, preview } from '../utils/getPreviewType'
 import { useProtectedSWRInfinite } from '../utils/fetchWithSWR'
-import { getExtension, getFileIcon } from '../utils/getFileIcon'
+import { getExtension, getRawExtension, getFileIcon } from '../utils/getFileIcon'
+import { getStoredToken } from '../utils/protectedRouteHandler'
 import {
   DownloadingToast,
   downloadMultipleFiles,
@@ -36,7 +37,6 @@ import ImagePreview from './previews/ImagePreview'
 import DefaultPreview from './previews/DefaultPreview'
 import { PreviewContainer } from './previews/Containers'
 
-import type { OdFileObject, OdFolderChildren, OdFolderObject } from '../types'
 import FolderListLayout from './FolderListLayout'
 import FolderGridLayout from './FolderGridLayout'
 
@@ -70,10 +70,10 @@ const formatChildName = (name: string) => {
   const { render, emoji } = renderEmoji(name)
   return render ? name.replace(emoji ? emoji[0] : '', '').trim() : name
 }
-export const ChildName: FC<{ name: string }> = ({ name }) => {
+export const ChildName: FC<{ name: string; folder?: boolean }> = ({ name, folder }) => {
   const original = formatChildName(name)
-  const extension = getExtension(original)
-  const prename = original.substring(0, original.length - extension.length)
+  const extension = folder ? '' : getRawExtension(original)
+  const prename = folder ? original : original.substring(0, original.length - extension.length)
   return (
     <span className="truncate before:float-right before:content-[attr(data-tail)]" data-tail={extension}>
       {prename}
@@ -134,9 +134,9 @@ export const Checkbox: FC<{
   )
 }
 
-export const Downloading: FC<{ title: string }> = ({ title }) => {
+export const Downloading: FC<{ title: string; style: string }> = ({ title, style }) => {
   return (
-    <span title={title} className="rounded p-2" role="status">
+    <span title={title} className={`${style} rounded`} role="status">
       <LoadingIcon
         // Use fontawesome far theme via class `svg-inline--fa` to get style `vertical-align` only
         // for consistent icon alignment, as class `align-*` cannot satisfy it
@@ -155,6 +155,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
   }>({})
 
   const router = useRouter()
+  const hashedToken = getStoredToken(router.asPath)
   const [layout, _] = useLocalStorage('preferredLayout', layouts[0])
 
   const { t } = useTranslation()
@@ -239,7 +240,10 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
         .filter(c => selected[c.id])
         // remove readme.md and hidden        
         .filter(c => c.name !== 'hidden' && !c.name.startsWith('.'))
-        .map(c => ({ name: c.name, url: c['@microsoft.graph.downloadUrl'] }))
+        .map(c => ({
+          name: c.name,
+          url: `/api/raw/?path=${path}/${c.name}${hashedToken ? `&odpt=${hashedToken}` : ''}`,
+        }))
 
       if (files.length == 1) {
         const el = document.createElement('a')
@@ -280,9 +284,10 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
             )
             continue
           }
+          const hashedTokenForPath = getStoredToken(p)
           yield {
             name: c?.name,
-            url: c ? c['@microsoft.graph.downloadUrl'] : undefined,
+            url: `/api/raw/?path=${p}${hashedTokenForPath ? `&odpt=${hashedTokenForPath}` : ''}`,
             path: p,
             isFolder,
           }
