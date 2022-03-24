@@ -8,7 +8,7 @@ overrides:
   follow-redirects@<1.14.8: '>=1.14.8'
   next@>=10.0.0 <12.1.0: '>=12.1.0'
   prismjs@>=1.14.0 <1.27.0: '>=1.27.0'
-  minimist@<=1.2.5: <0.0.0
+  minimist@<=1.2.5: '>=1.2.6'
 
 specifiers:
   '@fortawesome/fontawesome-svg-core': ^1.2.35
