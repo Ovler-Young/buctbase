@@ -13,6 +13,7 @@ class MyDocument extends Document {
           {siteConfig.googleFontLinks.map(link => (
             <link key={link} rel="stylesheet" href={link} />
           ))}
+          <script async defer data-website-id="71d8ab1a-c71f-4018-a66f-e8c974d2bda4" src="https://umami-psi-five.vercel.app/umami.js"></script>
         </Head>
         <body>
           <Main />
