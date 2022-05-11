@@ -1,3 +1,33 @@
+## About the fork
+
+`main` branch is for the Vercel build of [my website](https://share.myl.moe).
+Do not use it if you want to use the fork.
+
+`dev` branch is the correct base for reusing.
+It will try to keep updated with `upstream/main`, but contains some extra patches which are pending/rejected (due to project roadmap preference other than bugs or breaking changes) PRs.
+
+### Patches
+
+Merged patches are marked as strikethrough
+
+#### New Features
+
+- Play video as audio for background playing on mobile devices #471
+- Docker build config #643 #642
+
+#### Bug Fix
+
+- Fix missing filename urlencoding in multidownload #639, which resolves discussion #621
+- Fix numeric password not working #638, which resolves #606
+
+### License
+
+All modification, if you concern license problem, is licensed under SPDX-License-Identifier: MIT
+
+---
+
+The following is the original README:
+
 <div align="center">
   <img src="./public/header.png" alt="onedrive-vercel-index" />
   <h3><a href="https://drive.swo.moe">onedrive-vercel-index</a></h3>
