@@ -12,14 +12,14 @@ Merged patches are marked as strikethrough
 
 #### New Features
 
-- Play video as audio for background playing on mobile devices #471
-- Docker build config #643 #642
+- Play video as audio for background playing on mobile devices spencerwooo/onedrive-vercel-index#471
+- Docker build config spencerwooo/onedrive-vercel-index#643 spencerwooo/onedrive-vercel-index#642
 
 #### Bug Fix
 
-- Fix missing filename urlencoding in multidownload #639, which resolves discussion #621
-- Fix numeric password not working #638, which resolves #606
-- Fix music volume reset to max automatically #630, which resolves #573
+- Fix missing filename urlencoding in multidownload spencerwooo/onedrive-vercel-index#639, which resolves discussion spencerwooo/onedrive-vercel-index#621
+- Fix numeric password not working spencerwooo/onedrive-vercel-index#638, which resolves spencerwooo/onedrive-vercel-index#606
+- Fix music volume reset to max automatically spencerwooo/onedrive-vercel-index#630, which resolves spencerwooo/onedrive-vercel-index#573
 
 ### License
 
