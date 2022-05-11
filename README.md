@@ -19,6 +19,7 @@ Merged patches are marked as strikethrough
 
 - Fix missing filename urlencoding in multidownload #639, which resolves discussion #621
 - Fix numeric password not working #638, which resolves #606
+- Fix music volume reset to max automatically #630, which resolves #573
 
 ### License
 
