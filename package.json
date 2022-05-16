@@ -19,7 +19,7 @@
     "@headlessui/react": "^1.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "awesome-debounce-promise": "^2.1.0",
-    "axios": "^0.25.0",
+    "axios": "^0.26.1",
     "cors": "^2.8.5",
     "countapi-js": "^1.0.2",
     "crypto-js": "^4.1.1",
