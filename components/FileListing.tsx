@@ -164,6 +164,14 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
 
   const { data, error, size, setSize } = useProtectedSWRInfinite(path)
 
+  // This saves path to video needed treated as audio. When path changes, reset it.
+  const [videoAsAudioPath, setVideoAsAudioPath] = useState<string>()
+  useEffect(() => {
+    if (videoAsAudioPath !== path) {
+      setVideoAsAudioPath(undefined)
+    }
+  }, [path, videoAsAudioPath])
+
   if (error) {
     // If error includes 403 which means the user has not completed initial setup, redirect to OAuth page
     if (error.status === 403) {
@@ -242,7 +250,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
         .filter(c => c.name !== 'hidden' && !c.name.startsWith('.'))
         .map(c => ({
           name: c.name,
-          url: `/api/raw/?path=${path}/${c.name}${hashedToken ? `&odpt=${hashedToken}` : ''}`,
+          url: `/api/raw/?path=${path}/${encodeURIComponent(c.name)}${hashedToken ? `&odpt=${hashedToken}` : ''}`,
         }))
 
       if (files.length == 1) {
@@ -372,7 +380,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
 
         {readmeFile && (
           <div className="mt-4">
-            <MarkdownPreview file={readmeFile} path={path} standalone={false} />
+            <MarkdownPreview file={readmeFile} path={path} standalone={false} proxy={true} />
           </div>
         )}
       </>
@@ -381,7 +389,10 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
 
   if ('file' in responses[0] && responses.length === 1) {
     const file = responses[0].file as OdFileObject
-    const previewType = getPreviewType(getExtension(file.name), { video: Boolean(file.video) })
+    const previewType = getPreviewType(getExtension(file.name), {
+      video: Boolean(file.video),
+      audio: Boolean(videoAsAudioPath),
+    })
 
     if (previewType) {
       switch (previewType) {
@@ -398,7 +409,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
           return <MarkdownPreview file={file} path={path} />
 
         case preview.video:
-          return <VideoPreview file={file} />
+          return <VideoPreview file={file} onPlayAsAudio={() => setVideoAsAudioPath(path)} />
 
         case preview.audio:
           return <AudioPreview file={file} />

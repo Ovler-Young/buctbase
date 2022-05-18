@@ -82,7 +82,7 @@ export const extensions = {
   url: preview.url,
 }
 
-export function getPreviewType(extension: string, flags?: { video?: boolean }): string | undefined {
+export function getPreviewType(extension: string, flags?: { video?: boolean; audio?: boolean }): string | undefined {
   let previewType = extensions[extension]
   if (!previewType) {
     return previewType
@@ -94,6 +94,11 @@ export function getPreviewType(extension: string, flags?: { video?: boolean }): 
     if (flags?.video) {
       previewType = preview.video
     }
+  }
+
+  // Videos may be intentionally recognized as audios for functions like background playing.
+  if (previewType === preview.video && flags?.audio) {
+    previewType = preview.audio
   }
 
   return previewType
