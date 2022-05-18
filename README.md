@@ -20,6 +20,7 @@ Merged patches are marked as strikethrough
 - Fix missing filename urlencoding in multidownload spencerwooo/onedrive-vercel-index#639, which resolves discussion spencerwooo/onedrive-vercel-index#621
 - Fix numeric password not working spencerwooo/onedrive-vercel-index#638, which resolves spencerwooo/onedrive-vercel-index#606
 - Fix music volume reset to max automatically spencerwooo/onedrive-vercel-index#630, which resolves spencerwooo/onedrive-vercel-index#573
+- Fix error report for search result item requests spencerwooo/onedrive-vercel-index#647
 
 ### License
 
