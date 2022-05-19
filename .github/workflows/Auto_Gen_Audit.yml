@@ -28,6 +28,12 @@ jobs:
 
     - name: Fix packages
       run: pnpm audit --fix 
+      
+    - name: Install dependencies again
+      run: pnpm install --no-frozen-lockfile
+
+    - name: Fix packages again
+      run: pnpm audit --fix 
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
