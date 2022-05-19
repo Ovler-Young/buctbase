@@ -76,7 +76,11 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["react"]
+      "ignoreMissing": [
+        "react",
+        "preview-office-docs",
+        "react-use-system-theme"
+      ]
     }
   }
 }
