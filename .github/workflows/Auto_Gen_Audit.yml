@@ -1,8 +1,7 @@
 name: aduit fix
 on:
   push:
-  schedule:
-  - cron: "0 13 * * 1,3,5"
+    branches: buctbase
 jobs:
   build:
     runs-on: ubuntu-20.04
