@@ -75,12 +75,9 @@
     "typescript": "4.5.5"
   },
   "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "react",
-        "preview-office-docs",
-        "react-use-system-theme"
-      ]
+      "allowedVersions": {
+        "react": "17"
+      }
     }
   }
 }
