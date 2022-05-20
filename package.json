@@ -75,9 +75,8 @@
     "typescript": "4.5.5"
   },
   "pnpm": {
-      "allowedVersions": {
-        "react": "17"
-      }
+    "allowedVersions": {
+      "react": "17"
     }
   }
 }
