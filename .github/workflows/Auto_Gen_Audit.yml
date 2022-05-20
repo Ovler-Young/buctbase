@@ -30,7 +30,7 @@ jobs:
       run: pnpm audit --fix 
       
     - name: Install dependencies again
-      run: pnpm install --no-frozen-lockfile
+      run: pnpm install --no-frozen-lockfile -strict-peer-dependencies=false
 
     - name: Fix packages again
       run: pnpm audit --fix 
