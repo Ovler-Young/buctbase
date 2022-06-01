@@ -7,6 +7,7 @@ specifiers:
   '@fortawesome/free-solid-svg-icons': ^5.15.3
   '@fortawesome/react-fontawesome': ^0.1.14
   '@headlessui/react': ^1.4.0
+  '@openfun/subsrt': ^1.0.5
   '@tailwindcss/line-clamp': ^0.3.1
   '@types/cors': ^2.8.12
   '@types/crypto-js': ^4.0.2
@@ -68,6 +69,7 @@ dependencies:
   '@fortawesome/free-solid-svg-icons': 5.15.4
   '@fortawesome/react-fontawesome': 0.1.17_6uk63tqcq2kfmhhlivxd3orcjq
   '@headlessui/react': 1.4.3_sfoxds7t5ydpegc3knd667wn6m
+  '@openfun/subsrt': 1.0.5
   '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.18
   awesome-debounce-promise: 2.1.0
   axios: 0.25.0
@@ -364,6 +366,11 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+
+  /@openfun/subsrt/1.0.5:
+    resolution: {integrity: sha512-XS1x7KZPdpWqkID115slsF1HXuPXpmzzG01IpA//8g4iwP3GmPcAWbSnWG0XxDCxgksWylpftlRY4dGM5jzslg==}
+    hasBin: true
+    dev: false
 
   /@rushstack/eslint-patch/1.1.0:
     resolution: {integrity: sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==}
