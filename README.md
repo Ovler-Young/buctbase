@@ -14,6 +14,9 @@ Merged patches are marked as strikethrough
 
 - Play video as audio for background playing on mobile devices spencerwooo/onedrive-vercel-index#471
 - Docker build config spencerwooo/onedrive-vercel-index#643 spencerwooo/onedrive-vercel-index#642
+- More translations
+  - Hindi translation spencerwooo/onedrive-vercel-index#500
+  - Turkish translation spencerwooo/onedrive-vercel-index#582
 
 #### Bug Fix
 
