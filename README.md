@@ -49,7 +49,7 @@ The following is the original README:
 
 ## TL;DR
 
-Showcase, share, preview, and download files inside *your* OneDrive with onedrive-vercel-index -
+Showcase, share, preview, and download files inside _your_ OneDrive with onedrive-vercel-index -
 
 - Completely free to host 💸
 - Super fast ⚡ and responsive 💦
@@ -66,9 +66,9 @@ Showcase, share, preview, and download files inside *your* OneDrive with onedriv
 
 Please go to our [discussion forum](https://github.com/spencerwooo/onedrive-vercel-index/discussions) for general questions and FAQs, **issues are for bug reports and bug reports only.** Feature requests may or may not be ignored, as [I (@spencerwooo)](https://spencerwoo.com) am the only one maintaining the project, so **I only prioritise features that I use.**
 
-*If you happen to like this project, please give it a star!* :3
+_If you happen to like this project, please give it a star!_ :3
 
-*If you really, really like this project, please send money! -> [Sponsors 🤑 and donations 💰](https://ovi.swo.moe/sponsor)*
+_If you really, really like this project, please send money! -> [Sponsors 🤑 and donations 💰](https://ovi.swo.moe/sponsor)_
 
 ## Demo
 
@@ -162,7 +162,7 @@ Documentation is hosted at [onedrive-vercel-index.spencerwoo.com](https://ovi.sw
 - I got a problem during deployment ... - [Docs - FAQ](https://ovi.swo.moe/docs/faqs/error-on-deployment)
 - I didn't find a solution / My problem is unique - [Find help in discussion forum](https://github.com/spencerwooo/onedrive-vercel-index/discussions).
 
-## Server-*less* (free)?
+## Server-_less_ (free)?
 
 Yes! Completely free with no backend server what-so-ever. (Well, we use Redis, but that's free to some extent also.)
 
@@ -174,7 +174,7 @@ Open-source is hard! If you happen to like this project and want me to keep goin
 
 ### Sponsors
 
-*Your name will appear here if you sponsor or donate 😀*
+_Your name will appear here if you sponsor or donate 😀_
 
 ## License
 
