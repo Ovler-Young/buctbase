@@ -17,6 +17,7 @@ Merged patches are marked as strikethrough
 - More translations
   - Hindi translation spencerwooo/onedrive-vercel-index#500
   - Turkish translation spencerwooo/onedrive-vercel-index#582
+- Multiple subtitle format support other than only WebVTT spencerwooo/onedrive-vercel-index#623 with more fine-tune
 
 #### Bug Fix
 
