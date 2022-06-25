@@ -73,5 +73,5 @@ module.exports = {
   // YOU SHOULD NOT RELY ON THEM TO PROTECT YOUR DATA.
   // hideDotPassword - Hide .password files in lists.
   // Notice that .password files can still be opened online manually with its path like other files.
-  hideDotPasswordInLists: false,
+  hideDotPasswordInLists: true,
 }
