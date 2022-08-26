@@ -119,18 +119,11 @@ const Navbar = () => {
             </a>
           )}
 
-          {siteConfig.txc && (
-            <a href={siteConfig.txc} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
-              <span className="hidden text-sm font-medium md:inline-block">兔小巢</span>
-            </a>
-          )}
-
           {siteConfig.wechat && (
             <button
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
               onClick={() => setIsOpenWechat(true)}
             >
-              <FontAwesomeIcon icon={['fab', 'weixin']} />
               <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
             </button>
           )}
