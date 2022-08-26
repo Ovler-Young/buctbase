@@ -101,7 +101,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:opacity-80 dark:text-white"
               >
-                <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
+                <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]}  className="h-4 w-4"  />
                 <span className="hidden text-sm font-medium md:inline-block">
                   {
                     // Append link name comments here to add translations
@@ -114,8 +114,15 @@ const Navbar = () => {
 
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
-              <FontAwesomeIcon icon={['far', 'envelope']} />
+              <FontAwesomeIcon icon={['far', 'envelope']} className="h-4 w-4"  />
               <span className="hidden text-sm font-medium md:inline-block">{t('Email')}</span>
+            </a>
+          )}
+
+          {siteConfig.txc && (
+            <a href={siteConfig.txc} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
+              <FontAwesomeIcon icon={['fas', 'question']} className="h-4 w-4"  />
+              <span className="hidden text-sm font-medium md:inline-block">兔小巢</span>
             </a>
           )}
 
@@ -124,9 +131,11 @@ const Navbar = () => {
               className="flex items-center space-x-2 dark:text-white hover:opacity-80"
               onClick={() => setIsOpenWechat(true)}
             >
+              <FontAwesomeIcon icon={['fab', 'weixin']} className="h-4 w-4" />
               <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
             </button>
           )}
+
           {tokenPresent && (
             <button
               className="flex items-center space-x-2 p-2 hover:opacity-80 dark:text-white"
