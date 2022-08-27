@@ -1,0 +1,47 @@
+name: aduit fix
+on:
+  push:
+    branches: buctbase
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    
+    strategy:
+      matrix:
+        node-version: [14]
+        
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: latest
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install --no-frozen-lockfile
+
+    - name: Fix packages
+      run: pnpm audit --fix 
+      
+    - name: Install dependencies again
+      run: pnpm install --no-frozen-lockfile -strict-peer-dependencies=false
+
+    - name: Fix packages again
+      run: pnpm audit --fix 
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        assignees: Ovler-Young
+        title: Update to fix Security dependences in ${{ github.ref_name }}
+        labels: Auto PR
+        branch: securityFix_${{ github.ref_name }}
+        commit-message: Update to fix Security dependences in ${{ github.ref_name }}
+        reviewers: Ovler-Young
+        branch-suffix: timestamp

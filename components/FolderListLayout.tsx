@@ -15,7 +15,7 @@ import siteConfig from '../config/site.config'
 
 const FileListItem: FC<{ fileContent: OdFolderChildren }> = ({ fileContent: c }) => {
   return (
-    <div className="grid cursor-pointer grid-cols-10 items-center space-x-2 px-3 py-2.5">
+    <div className={`grid cursor-pointer grid-cols-10 items-center space-x-2 px-3 py-2.5 ${c.name == '.password' ? 'hidden': ''} ${c.name == 'hidden' ? 'hidden': ''}`}>
       <div className="col-span-10 flex items-center space-x-2 truncate md:col-span-6" title={c.name}>
         <div className="w-5 flex-shrink-0 text-center">
           <ChildIcon child={c} />
@@ -93,7 +93,7 @@ const FolderListLayout = ({
       </div>
 
       {folderChildren.map((c: OdFolderChildren) =>
-        c.name === '.password' && siteConfig.hideDotPasswordInLists ? (
+        c.name == '.password' || c.name == 'hidden' && siteConfig.hideDotPasswordInLists ? (
           ''
         ) : (
           <div

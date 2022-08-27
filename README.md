@@ -1,21 +1,39 @@
-## About the fork
+# BUCTBASE
 
-`main` branch is for the Vercel build of [my website](https://share.myl.moe).
-Do not use it if you want to use the fork.
+由北化学生建立的一个分享网站，基于 [onedrive-vercel-index](https://github.com/spencerwooo/onedrive-vercel-index) 构建。
 
-`dev` branch is the correct base for reusing.
-It will try to keep updated with `upstream/main`, but contains some extra patches which are pending/rejected (due to project roadmap preference other than bugs or breaking changes) PRs.
+网站主要功能参见[原项目文档](https://onedrive-vercel-index.spencerwoo.com/zh) 中的相关部分。
 
-I have become a collaborator of the upstream [spencerwooo/onedrive-vercel-index](https://github.com/spencerwooo/onedrive-vercel-index), so later `dev` branch should only contain special opinioned features required by me.
-If you just need a nice start, I would suggest you start with / switch back to the upsteam.
+修改：
 
-### Patches
+- 增加 badage 统计功能
 
+- 增加微信公众号显示功能
+
+- 增加 robot.txt 规定哪些文件可以被搜索引擎检索
+
+- 增加隐藏部分文件功能
+
+- 增加自动获取上游更新的 GitHub-action
+
+- 删除原项目的 FUNDING 文件
+
+- 将 api.config.js 中 clientId 和 clientSecret 的获取方式增加 vervel 环境变量方式
+
+- gitignore 文件增加 .env 文件
+
+
+myl7-upstream：
 - Play video as audio for background playing on mobile devices spencerwooo/onedrive-vercel-index#471
 - Docker build config spencerwooo/onedrive-vercel-index#643 spencerwooo/onedrive-vercel-index#642
 - Multiple subtitle format support other than only WebVTT spencerwooo/onedrive-vercel-index#623 with more fine-tune
 - Visual defense: Options added to [`config/site.config.js`](config/site.config.js) to visually hide some elements in the app. Notice that these elements can still be accessed by other ways. **YOU SHOULD NOT RELY ON THEM TO PROTECT YOUR DATA**.
   - `hideDotPasswordInLists`: Enable it to hide `.password` in lists. Notice that `.password` can still be opened online manually with its path like other files.
+- Fix missing filename urlencoding in multidownload spencerwooo/onedrive-vercel-index#639, which resolves discussion spencerwooo/onedrive-vercel-index#621
+- Fix numeric password not working spencerwooo/onedrive-vercel-index#638, which resolves spencerwooo/onedrive-vercel-index#606
+- Fix music volume reset to max automatically spencerwooo/onedrive-vercel-index#630, which resolves spencerwooo/onedrive-vercel-index#573
+- Fix error report for search result item requests spencerwooo/onedrive-vercel-index#647
+- Fix wrong auth url param name of EPUB preview, which resolves spencerwooo/onedrive-vercel-index#659
 
 ### License
 

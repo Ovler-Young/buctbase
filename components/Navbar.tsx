@@ -21,6 +21,7 @@ const Navbar = () => {
 
   const [tokenPresent, setTokenPresent] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenWechat, setIsOpenWechat] = useState(false)
 
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearchBox = () => setSearchOpen(true)
@@ -100,7 +101,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:opacity-80 dark:text-white"
               >
-                <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
+                <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]}  className="h-4 w-4"  />
                 <span className="hidden text-sm font-medium md:inline-block">
                   {
                     // Append link name comments here to add translations
@@ -113,9 +114,26 @@ const Navbar = () => {
 
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
-              <FontAwesomeIcon icon={['far', 'envelope']} />
+              <FontAwesomeIcon icon={['far', 'envelope']} className="h-4 w-4"  />
               <span className="hidden text-sm font-medium md:inline-block">{t('Email')}</span>
             </a>
+          )}
+
+          {siteConfig.txc && (
+            <a href={siteConfig.txc} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
+              <FontAwesomeIcon icon={['fas', 'question']} className="h-4 w-4"  />
+              <span className="hidden text-sm font-medium md:inline-block">兔小巢</span>
+            </a>
+          )}
+
+          {siteConfig.wechat && (
+            <button
+              className="flex items-center space-x-2 dark:text-white hover:opacity-80"
+              onClick={() => setIsOpenWechat(true)}
+            >
+              <FontAwesomeIcon icon={['fab', 'weixin']} className="h-4 w-4" />
+              <span className="text-sm font-medium hidden md:inline-block">微信公众号</span>
+            </button>
           )}
 
           {tokenPresent && (
@@ -127,6 +145,7 @@ const Navbar = () => {
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}
+         
         </div>
       </div>
 
@@ -191,6 +210,70 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon icon={['far', 'trash-alt']} />
                     <span>{t('Clear all')}</span>
+                  </button>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
+      
+      <Transition appear show={isOpenWechat} as={Fragment}>
+        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={isOpenWechat} onClose={() => setIsOpenWechat(false)}>
+          <div className="min-h-screen px-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-100"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-50"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="bg-gray-50 dark:bg-gray-800 fixed inset-0" />
+            </Transition.Child>
+
+            {/* This element is to trick the browser into centering the modal contents. */}
+            <span className="inline-block h-screen align-middle" aria-hidden="true">
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-100"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-50"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="dark:bg-gray-900 inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white rounded-lg">
+                <Dialog.Title className="dark:text-gray-100 text-lg font-bold text-gray-900">
+                  公众号二维码
+                </Dialog.Title>
+                <div className="mt-2">
+                  <p className="text-sm text-gray-500">下面的就是公众号二维码</p>
+                  <p className="text-sm text-gray-500">拿起手机扫一扫吧！</p>
+                  <br/>
+                  <p className="text-sm text-gray-500">p.s.1 图片可能加载较慢，请稍后！</p>
+                  <p className="text-sm text-gray-500">p.s.2 手机上请先长按保存图片，然后前往微信扫码</p>      
+                </div>
+
+                <div className="dark:text-gray-100 mt-4 font-mono text-sm">
+                  <Image
+                    src={siteConfig.wechat}
+                    width={450}
+                    height={450}
+                    alt="微信公众号二维码"
+                    priority
+                  />
+                </div>
+
+                <div className="flex items-center justify-end mt-8">
+                  <button
+                    className="focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-400 inline-flex items-center justify-center px-4 py-2 mr-3 space-x-2 text-white bg-blue-500 rounded"
+                    onClick={() => setIsOpenWechat(false)}
+                  >
+                    <span>好嘞</span>
                   </button>
                 </div>
               </div>

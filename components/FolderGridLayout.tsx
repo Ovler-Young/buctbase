@@ -104,7 +104,7 @@ const FolderGridLayout = ({
 
       <div className="grid grid-cols-2 gap-3 p-3 md:grid-cols-4">
         {folderChildren.map((c: OdFolderChildren) =>
-          c.name === '.password' && siteConfig.hideDotPasswordInLists ? (
+          c.name === '.password' || c.name === 'hidden' && siteConfig.hideDotPasswordInLists ? (
             ''
           ) : (
             <div
