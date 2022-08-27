@@ -16,6 +16,9 @@ module.exports = {
   // Prefix for KV Storage
   kvPrefix: process.env.KV_PREFIX || '',
 
+  // Prefix for KV Storage
+  kvPrefix: process.env.KV_PREFIX || '',
+
   // The name of your website. Present alongside your icon.
   title: "BUCTBASE",
 
