@@ -11,10 +11,7 @@ module.exports = {
 
   // [OPTIONAL] This is the website icon to the left of the title inside the navigation bar. It should be placed under the
   // /public directory of your GitHub project (not your OneDrive folder!), and referenced here by its relative path to /public.
-  icon: "/icons/icon.PNG",
-
-  // Prefix for KV Storage
-  kvPrefix: process.env.KV_PREFIX || '',
+  icon: "/icons/1024.png",
 
   // Prefix for KV Storage
   kvPrefix: process.env.KV_PREFIX || '',
@@ -36,7 +33,7 @@ module.exports = {
   // googleFontMono - the monospace font used in onedrive-vercel-index.
   googleFontMono: 'Fira Mono',
   // googleFontLinks -  an array of links for referencing the google font assets.
-  googleFontLinks: ['https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter:wght@400;500;700&display=swap'],
+  googleFontLinks: ['https://fonts.loli.net/css2?family=Fira+Mono&family=Inter:wght@400;500;700&display=swap'],
 
   // [OPTIONAL] The footer component of your website. You can write HTML here, but you need to escape double
   // quotes - changing " to \". You can write anything here, and if you like badges, generate some with https://shields.io
