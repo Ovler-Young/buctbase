@@ -188,6 +188,11 @@ export async function* traverseFolder(path: string): AsyncGenerator<TraverseItem
     return {
       i,
       path,
+      //data: await fetcher(
+      //  next ? `/api/?path=${path}&next=${next}` : `/api?path=${path}`,
+      //  hashedToken ?? undefined
+      //).catch(error => ({ i, path, error })),
+      // data will try again at most 3 times
       data: await fetcher(
         next ? `/api/?path=${path}&next=${next}` : `/api?path=${path}`,
         hashedToken ?? undefined
@@ -218,7 +223,13 @@ export async function* traverseFolder(path: string): AsyncGenerator<TraverseItem
           error: { status: innerError.status, message: innerError.message.error },
         }
         continue
-      } else {
+      } 
+      else if (innerError.status === 504) {
+        // should retry
+        pool[i] = genTask(i, path)
+        continue
+      }
+      else {
         throw error
       }
     }
