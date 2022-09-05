@@ -173,6 +173,12 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
   }, [path, videoAsAudioPath])
 
   if (error) {
+    // If error includes 403 which means the user has not completed initial setup, redirect to OAuth page
+    if (error.status === 403) {
+      router.push('/onedrive-vercel-index-oauth/step-1')
+      return <div />
+    }
+
     return (
       <PreviewContainer>
         {error.status === 401 ? <Auth redirect={path} /> : <FourOhFour errorMsg={JSON.stringify(error.message)} />}
