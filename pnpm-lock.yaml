@@ -56,6 +56,7 @@ specifiers:
   react-audio-player: ^0.17.0
   react-cookie: ^4.1.1
   react-copy-to-clipboard: ^5.0.3
+  react-cusdis: ^2.1.3
   react-dom: ^17.0.2
   react-hot-toast: ^2.0.0
   react-hotkeys-hook: ^3.4.4
@@ -104,6 +105,7 @@ dependencies:
   react-audio-player: 0.17.0_sfoxds7t5ydpegc3knd667wn6m
   react-cookie: 4.1.1_react@17.0.2
   react-copy-to-clipboard: 5.0.4_react@17.0.2
+  react-cusdis: 2.1.3_sfoxds7t5ydpegc3knd667wn6m
   react-dom: 17.0.2_react@17.0.2
   react-hot-toast: 2.2.0_no5fs3xg7ocomvwxlrjzalwpae
   react-hotkeys-hook: 3.4.4_sfoxds7t5ydpegc3knd667wn6m
@@ -1479,7 +1481,7 @@ packages:
       eslint: 8.8.0
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.5.0_hexytdhmo422l55jsqymxqfu6q
-      eslint-plugin-import: 2.25.4_4lr7rwbawkv3f23yywoq432o7m
+      eslint-plugin-import: 2.25.4_eslint@8.8.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.8.0
       eslint-plugin-react: 7.28.0_eslint@8.8.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.8.0
@@ -1517,7 +1519,7 @@ packages:
     dependencies:
       debug: 4.3.3
       eslint: 8.8.0
-      eslint-plugin-import: 2.25.4_4lr7rwbawkv3f23yywoq432o7m
+      eslint-plugin-import: 2.25.4_eslint@8.8.0
       glob: 7.2.0
       is-glob: 4.0.3
       resolve: 1.22.0
@@ -1526,7 +1528,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.3_qvuibbemuhbx2wr7dr4uz5jkrm:
+  /eslint-module-utils/2.7.3_ulu2225r2ychl26a37c6o2rfje:
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1544,16 +1546,14 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.10.2_txwvkng2juu2h6yeaibqmql3uy
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.5.0_hexytdhmo422l55jsqymxqfu6q
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.25.4_4lr7rwbawkv3f23yywoq432o7m:
+  /eslint-plugin-import/2.25.4_eslint@8.8.0:
     resolution: {integrity: sha512-/KJBASVFxpu0xg1kIBn9AUa8hQVnszpwgE7Ld0lKAlx7Ie87yzEzCgSkekt+le/YVhiaosO4Y14GDAOc41nfxA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1563,14 +1563,13 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.10.2_txwvkng2juu2h6yeaibqmql3uy
       array-includes: 3.1.4
       array.prototype.flat: 1.2.5
       debug: 2.6.9
       doctrine: 2.1.0
       eslint: 8.8.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.3_qvuibbemuhbx2wr7dr4uz5jkrm
+      eslint-module-utils: 2.7.3_ulu2225r2ychl26a37c6o2rfje
       has: 1.0.3
       is-core-module: 2.8.1
       is-glob: 4.0.3
@@ -3704,6 +3703,16 @@ packages:
       copy-to-clipboard: 3.3.1
       prop-types: 15.8.1
       react: 17.0.2
+    dev: false
+
+  /react-cusdis/2.1.3_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-fUJOAUY7a3y21fNzlRWUSTr/ZMsejQAYWIWdsNuBPPZHbUrBvke/8Gw4OL5Mlrth7jLw8VTNssX0WBX5/prorQ==}
+    peerDependencies:
+      react: ^17.0.0
+      react-dom: ^17.0.0
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-dom/17.0.2_react@17.0.2:
