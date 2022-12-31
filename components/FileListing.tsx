@@ -4,7 +4,6 @@ import { FC, MouseEventHandler, SetStateAction, useEffect, useRef, useState } fr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import toast, { Toaster } from 'react-hot-toast'
 import emojiRegex from 'emoji-regex'
-import { ReactCusdis } from 'react-cusdis'
 
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
@@ -40,6 +39,8 @@ import { PreviewContainer } from './previews/Containers'
 
 import FolderListLayout from './FolderListLayout'
 import FolderGridLayout from './FolderGridLayout'
+
+import Comments from './Comment'
 
 // Disabling SSR for some previews
 const EPUBPreview = dynamic(() => import('./previews/EPUBPreview'), {
@@ -379,18 +380,8 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
           </div>
         )}
 
-        <div>
-          <ReactCusdis
-            attrs={{
-              host: 'https://cusdis.180811.xyz',
-              appId: 'c56906bd-f8b3-4701-8659-7b0e19929392',
-              // pageId is the unique id of the page, it can be the post id, slug or url. We use the url here.
-              pageId: `${path}`,
-              // pageTitle is the title of the page, we use the post title here.
-              pageTitle: `${path.split('/').pop()}`,
-              pageUrl: 'PAGE_URL'
-            }}
-          />
+        <div className="mt-4">
+          <Comments url={`${window.location.origin}${window.location.pathname}`} />
         </div>
       </>
     )
