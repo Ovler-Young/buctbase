@@ -24,7 +24,7 @@
     "@openfun/subsrt": "^1.0.5",
     "@tailwindcss/line-clamp": "^0.3.1",
     "awesome-debounce-promise": "^2.1.0",
-    "axios": "^0.25.0",
+    "axios": "^0.27.0",
     "cors": "^2.8.5",
     "countapi-js": "^1.0.2",
     "crypto-js": "^4.1.1",
