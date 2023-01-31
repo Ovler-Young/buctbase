@@ -16,7 +16,7 @@ specifiers:
   '@headlessui/react': ^1.4.0
   '@next/bundle-analyzer': ^12.2.5
   '@openfun/subsrt': ^1.0.5
-  '@tailwindcss/line-clamp': ^0.3.1
+  '@tailwindcss/line-clamp': ^0.4.0
   '@types/cors': ^2.8.12
   '@types/crypto-js': ^4.0.2
   '@types/ioredis': ^4.28.5
@@ -81,7 +81,7 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.1.17_6uk63tqcq2kfmhhlivxd3orcjq
   '@headlessui/react': 1.4.3_sfoxds7t5ydpegc3knd667wn6m
   '@openfun/subsrt': 1.0.5
-  '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.18
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.0.18
   awesome-debounce-promise: 2.1.0
   axios: 0.25.0
   cors: 2.8.5
@@ -404,8 +404,8 @@ packages:
     resolution: {integrity: sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==}
     dev: true
 
-  /@tailwindcss/line-clamp/0.3.1_tailwindcss@3.0.18:
-    resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.0.18:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:

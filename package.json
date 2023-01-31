@@ -22,7 +22,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@headlessui/react": "^1.4.0",
     "@openfun/subsrt": "^1.0.5",
-    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "awesome-debounce-promise": "^2.1.0",
     "axios": "^0.25.0",
     "cors": "^2.8.5",
