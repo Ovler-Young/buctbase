@@ -44,7 +44,7 @@ specifiers:
   mpegts.js: ^1.6.10
   next: ^12.0.10
   next-i18next: ^10.2.0
-  nextjs-progressbar: ^0.0.13
+  nextjs-progressbar: ^0.0.16
   plyr-react: ^3.2.1
   postcss: ^8.4.5
   preact: ^10.10.6
@@ -95,7 +95,7 @@ dependencies:
   mpegts.js: 1.6.10
   next: 12.0.10_sfoxds7t5ydpegc3knd667wn6m
   next-i18next: 10.2.0_me4qx2mswy2knchxyjkvkr5vlm
-  nextjs-progressbar: 0.0.13_next@12.0.10+react@17.0.2
+  nextjs-progressbar: 0.0.16_next@12.0.10+react@17.0.2
   plyr-react: 3.2.1_sfoxds7t5ydpegc3knd667wn6m
   preact: 10.10.6
   preview-office-docs: 1.0.2_react@17.0.2
@@ -489,6 +489,10 @@ packages:
   /@types/node/17.0.14:
     resolution: {integrity: sha512-SbjLmERksKOGzWzPNuW7fJM7fk3YXVTFiZWB/Hs99gwhk+/dnrQRPBQjPW9aO+fi1tAffi9PrwFvsmOKmDTyng==}
     dev: true
+
+  /@types/nprogress/0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
+    dev: false
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -3223,12 +3227,13 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextjs-progressbar/0.0.13_next@12.0.10+react@17.0.2:
-    resolution: {integrity: sha512-vuE9/j1yaFyHhMVwdlPZbGbcwnvoZZMH8fXUG+HCa+w5uojRNOMO43EL+o9YZ53QwQHsjWdfUapz+J8D/u3jFw==}
+  /nextjs-progressbar/0.0.16_next@12.0.10+react@17.0.2:
+    resolution: {integrity: sha512-GV0fD38EMD3vSDCmkq+tObmoup6QA91a6a9MxGuhJZuRk/9TNsrHGnIQQQ/sggkMkXuT4fBgF6jRjFwScDT3zA==}
     peerDependencies:
-      next: '>= 6.0.0 <=12.x.x'
-      react: '>= 16.0.0 <= 17.x.x'
+      next: '>= 6.0.0'
+      react: '>= 16.0.0'
     dependencies:
+      '@types/nprogress': 0.2.0
       next: 12.0.10_sfoxds7t5ydpegc3knd667wn6m
       nprogress: 0.2.0
       prop-types: 15.8.1
@@ -3273,7 +3278,7 @@ packages:
     dev: true
 
   /nprogress/0.2.0:
-    resolution: {integrity: sha1-y480xTIT2JVyP8urkH6UIq28r7E=}
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
     dev: false
 
   /nth-check/2.0.1:
