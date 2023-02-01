@@ -15,10 +15,10 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-regular-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^6.0.0",
+    "@fortawesome/free-brands-svg-icons": "^6.0.0",
+    "@fortawesome/free-regular-svg-icons": "^6.0.0",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@headlessui/react": "^1.4.0",
     "@openfun/subsrt": "^1.0.5",
