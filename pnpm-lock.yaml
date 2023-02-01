@@ -20,7 +20,7 @@ specifiers:
   '@types/cors': ^2.8.12
   '@types/crypto-js': ^4.0.2
   '@types/ioredis': ^4.28.5
-  '@types/react': 17.0.38
+  '@types/react': 17.0.53
   '@types/react-copy-to-clipboard': ^5.0.0
   '@types/react-dom': ^17.0.8
   '@types/react-pdf': ^5.0.4
@@ -107,7 +107,7 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-hot-toast: 2.2.0_no5fs3xg7ocomvwxlrjzalwpae
   react-hotkeys-hook: 3.4.4_sfoxds7t5ydpegc3knd667wn6m
-  react-markdown: 8.0.0_wchdyfjsjs7jbjx7r7guc3etfq
+  react-markdown: 8.0.0_h7fc2el62uaa77gho3xhys6ola
   react-reader: 0.21.3_react@17.0.2
   react-syntax-highlighter: 15.4.5_react@17.0.2
   react-use-system-theme: 1.1.1_react@17.0.2
@@ -124,7 +124,7 @@ devDependencies:
   '@types/cors': 2.8.12
   '@types/crypto-js': 4.1.0
   '@types/ioredis': 4.28.7
-  '@types/react': 17.0.38
+  '@types/react': 17.0.53
   '@types/react-copy-to-clipboard': 5.0.2
   '@types/react-dom': 17.0.11
   '@types/react-pdf': 5.0.9
@@ -443,7 +443,7 @@ packages:
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
       hoist-non-react-statics: 3.3.2
     dev: false
 
@@ -503,19 +503,19 @@ packages:
   /@types/react-copy-to-clipboard/5.0.2:
     resolution: {integrity: sha512-O29AThfxrkUFRsZXjfSWR2yaWo0ppB1yLEnHA+Oh24oNetjBAwTDu1PmolIqdJKzsZiO4J1jn6R6TmO96uBvGg==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
     dev: true
 
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
     dev: true
 
   /@types/react-pdf/5.0.9:
     resolution: {integrity: sha512-sDK48DwAnha8nf74cavp1g1a8oCLI3F4hBQZm+DHZmgGYOnBm0UuAKwVu84cL2By0MkiCrGv0KSJDVSv+tN6KA==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
       pdfjs-dist: 2.12.313
     transitivePeerDependencies:
       - worker-loader
@@ -524,11 +524,11 @@ packages:
   /@types/react-syntax-highlighter/13.5.2:
     resolution: {integrity: sha512-sRZoKZBGKaE7CzMvTTgz+0x/aVR58ZYUTfB7HN76vC+yQnvo1FWtzNARBt0fGqcLGEVakEzMu/CtPzssmanu8Q==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
     dev: true
 
-  /@types/react/17.0.38:
-    resolution: {integrity: sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==}
+  /@types/react/17.0.53:
+    resolution: {integrity: sha512-1yIpQR2zdYu1Z/dc1OxC+MA6GR240u3gcnP4l6mvj/PJiVaqHsQPmWttsvHsfnhfPbU2FuGmo0wSITPygjBmsw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -3770,14 +3770,14 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
-  /react-markdown/8.0.0_wchdyfjsjs7jbjx7r7guc3etfq:
+  /react-markdown/8.0.0_h7fc2el62uaa77gho3xhys6ola:
     resolution: {integrity: sha512-qbrWpLny6Ef2xHqnYqtot948LXP+4FtC+MWIuaN1kvSnowM+r1qEeEHpSaU0TDBOisQuj+Qe6eFY15cNL3gLAw==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/hast': 2.3.4
-      '@types/react': 17.0.38
+      '@types/react': 17.0.53
       '@types/unist': 2.0.6
       comma-separated-tokens: 2.0.2
       hast-util-whitespace: 2.0.0
