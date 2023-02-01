@@ -60,7 +60,7 @@ specifiers:
   react-hot-toast: ^2.0.0
   react-hotkeys-hook: ^3.4.4
   react-markdown: ^8.0.0
-  react-reader: ^0.20.4
+  react-reader: ^0.21.0
   react-syntax-highlighter: ^15.4.5
   react-use-system-theme: ^1.1.1
   rehype-katex: ^6.0.2
@@ -108,7 +108,7 @@ dependencies:
   react-hot-toast: 2.2.0_no5fs3xg7ocomvwxlrjzalwpae
   react-hotkeys-hook: 3.4.4_sfoxds7t5ydpegc3knd667wn6m
   react-markdown: 8.0.0_wchdyfjsjs7jbjx7r7guc3etfq
-  react-reader: 0.20.5_react@17.0.2
+  react-reader: 0.21.3_react@17.0.2
   react-syntax-highlighter: 15.4.5_react@17.0.2
   react-use-system-theme: 1.1.1_react@17.0.2
   rehype-katex: 6.0.2
@@ -462,7 +462,7 @@ packages:
     dev: false
 
   /@types/localforage/0.0.34:
-    resolution: {integrity: sha1-XjHDLdh5HsS5/z70fJy1Wy0NlDg=}
+    resolution: {integrity: sha512-tJxahnjm9dEI1X+hQSC5f2BSd/coZaqbIl1m3TCl0q9SVuC52XcXfV0XmoCU1+PmjyucuVITwoTnN8OlTbEXXA==}
     deprecated: This is a stub types definition for localforage (https://github.com/localForage/localForage). localforage provides its own type definitions, so you don't need @types/localforage installed!
     dependencies:
       localforage: 1.10.0
@@ -1076,6 +1076,7 @@ packages:
 
   /core-js/3.21.0:
     resolution: {integrity: sha512-YUdI3fFu4TF/2WykQ2xzSiTQdldLB4KVuL9WeAy5XONZYt5Cun/fpQvctoKbCgvPhmzADeesTk/j2Rdx77AcKQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
     dev: false
 
@@ -1364,8 +1365,8 @@ packages:
     resolution: {integrity: sha512-Ds/TEoZjwggRoz/Q2O7SE3i4Jm66mqTDfmdHdq/7DKVk3bro9Q8h6WdXKdPqFLMoqxrDK5SVRzHVPOS6uuGtrg==}
     dev: true
 
-  /epubjs/0.3.92:
-    resolution: {integrity: sha512-+uo6Up+tieZm9TthPAWMzTzUl2KKArmGdD7UthMRivWs8o2IWDrKmVJ9P3R8f31/03bgnveTkzCQ17Qvg/6+Fw==}
+  /epubjs/0.3.93:
+    resolution: {integrity: sha512-c06pNSdBxcXv3dZSbXAVLE1/pmleRhOT6mXNZo6INKmvuKpYB65MwU/lO7830czCtjIiK9i+KR+3S+p0wtljrw==}
     dependencies:
       '@types/localforage': 0.0.34
       '@xmldom/xmldom': 0.7.5
@@ -1427,7 +1428,7 @@ packages:
     dev: false
 
   /es6-iterator/2.0.3:
-    resolution: {integrity: sha1-p96IkUGgWpSwhUQDstCg+/qY87c=}
+    resolution: {integrity: sha512-zw4SRzoUkd+cl+ZoE15A9o1oQd920Bb0iOJMQkQhl3jNc03YqVjAhG7scf9C5KWRU/R13Orf588uCC6525o02g==}
     dependencies:
       d: 1.0.1
       es5-ext: 0.10.53
@@ -1743,7 +1744,7 @@ packages:
     dev: true
 
   /event-emitter/0.3.5:
-    resolution: {integrity: sha1-34xp7vFkeSPHFXuc6DhAYQsCzDk=}
+    resolution: {integrity: sha512-D9rRn9y7kLPnJ+hMq7S/nhvoKwwvVJahBi2BPmx3bvbsEdK3W9ii8cBSGjP+72/LnM4n6fo3+dkCX5FeTQruXA==}
     dependencies:
       d: 1.0.1
       es5-ext: 0.10.53
@@ -2262,7 +2263,7 @@ packages:
     dev: true
 
   /immediate/3.0.6:
-    resolution: {integrity: sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=}
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
     dev: false
 
   /import-fresh/3.3.0:
@@ -2614,7 +2615,7 @@ packages:
     dev: true
 
   /lie/3.1.1:
-    resolution: {integrity: sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=}
+    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
     dependencies:
       immediate: 3.0.6
     dev: false
@@ -3179,7 +3180,7 @@ packages:
     dev: false
 
   /next-tick/1.0.0:
-    resolution: {integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=}
+    resolution: {integrity: sha512-mc/caHeUcdjnC/boPWJefDr4KUIWQNv+tlnFnJd38QMou86QtxQzBJfxgGRzvx8jazYRqrVlaHarfO72uNxPOg==}
     dev: false
 
   /next/12.0.10_sfoxds7t5ydpegc3knd667wn6m:
@@ -3462,7 +3463,7 @@ packages:
     engines: {node: '>=8'}
 
   /path-webpack/0.0.3:
-    resolution: {integrity: sha1-/23sdJ7sWpRgXATV9j/FVgegOhY=}
+    resolution: {integrity: sha512-AmeDxedoo5svf7aB3FYqSAKqMxys014lVKBzy1o/5vv9CtU7U4wgGWL1dA2o6MOzcD53ScN4Jmiq6VbtLz1vIQ==}
     dev: false
 
   /pdfjs-dist/2.12.313:
@@ -3795,21 +3796,21 @@ packages:
       - supports-color
     dev: false
 
-  /react-reader/0.20.5_react@17.0.2:
-    resolution: {integrity: sha512-mg49s+RTm1qDLEMgvQeqh1aMm2T6wLqwevkxcIlPx1/dAP/Q0q9HIXl1N/bAifZQTQIoJt8UMAAyXp8eBzmCag==}
+  /react-reader/0.21.3_react@17.0.2:
+    resolution: {integrity: sha512-/8TmwSgDgIihY4PJr7f5aFOkICK7GdZoX2CXO0AakwvBBshcZtfAusyWMYZ63TYp/XJH9P7rbFGsQq5naHdKYg==}
     peerDependencies:
       react: '>=17.0.2'
     dependencies:
-      epubjs: 0.3.92
+      epubjs: 0.3.93
       prop-types: 15.8.1
       react: 17.0.2
-      react-swipeable: 6.2.0_react@17.0.2
+      react-swipeable: 7.0.0_react@17.0.2
     dev: false
 
-  /react-swipeable/6.2.0_react@17.0.2:
-    resolution: {integrity: sha512-nWQ8dEM8e/uswZLSIkXUsAnQmnX4MTcryOHBQIQYRMJFDpgDBSiVbKsz/BZVCIScF4NtJh16oyxwaNOepR6xSw==}
+  /react-swipeable/7.0.0_react@17.0.2:
+    resolution: {integrity: sha512-NI7KGfQ6gwNFN0Hor3vytYW3iRfMMaivGEuxcADOOfBCx/kqwXE8IfHFxEcxSUkxCYf38COLKYd9EMYZghqaUA==}
     peerDependencies:
-      react: ^16.8.3 || ^17
+      react: ^16.8.3 || ^17 || ^18
     dependencies:
       react: 17.0.2
     dev: false
